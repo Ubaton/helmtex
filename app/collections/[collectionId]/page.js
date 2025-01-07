@@ -1,58 +1,53 @@
-// // app/products/[collectionId]/product/[productId]/page.js
+"use client";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import { React, useEffect, useState } from "react";
 
-// import React from 'react';
-// import { collections } from '@/components/ProductCard/Collection/data';
-// import { notFound } from 'next/navigation';
+const Page = () => {
+  const [productDetails, setProductDetails] = useState({
+    id: null,
+    title: null,
+    imageUrl: null,
+  });
+  const searchParams = useSearchParams();
 
-// const page = ({ params }) => {
-//     const { collectionId, productId } = params;
-//     const collection = collections.find((c) => c.id === collectionId);
+  useEffect(() => {
+    const title = searchParams.get("title");
+    const imageUrl = searchParams.get("imageUrl");
+    const id = window.location.pathname.split("/").pop();
 
-//     if (!collection) {
-//         return notFound();
-//     }
-
-//     const product = collection.products.find((p) => p.id === productId);
-
-//     if (!product) {
-//         return notFound();
-//     }
-
-//     return (
-//         <div className="p-8">
-//             <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-//             <img src={product.imageUrl} alt={product.title} className="w-full h-96 object-cover mb-4" />
-//             <p className="text-lg mb-4">Details about {product.title} in the {collection.name}.</p>
-//         </div>
-//     );
-// };
-
-// export default page;
-
-"use client"
-import { useSearchParams } from 'next/navigation'
-import {React, useEffect, useState } from 'react'
-
-const page = () => {
-  const [productDetails, setProductDetails] = useState({id:null, title:null})
-  const searchParams = useSearchParams("")
-
-  useEffect (() => {
-    const params = new URLSearchParams(window.location.search)
-    const title = params.get("title")
-    const id = params.get("id")
-    setProductDetails({id,title})
-    })
+    if (title && id && imageUrl) {
+      setProductDetails({ id, title, imageUrl });
+    }
+  }, [searchParams]);
 
   return (
-    <div className="p-24 flex justify-center items-center h-screen">
-      {productDetails.id && productDetails.title ? (<div>
-        <p>{productDetails.id}</p>
-        <p>{productDetails.title}</p>
-      </div>):(<p>Nothing</p>)}
+    <div className="p-24">
+      {productDetails.id && productDetails.title ? (
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-3xl font-bold mb-6">{productDetails.title}</h1>
+          {productDetails.imageUrl && (
+            <Image
+              src={productDetails.imageUrl}
+              alt={productDetails.title}
+              width={800}
+              height={600}
+              className="w-full h-96 object-cover rounded-lg shadow-lg mb-6"
+            />
+          )}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-2">Collection Details</h2>
+            <p className="text-gray-600">Collection ID: {productDetails.id}</p>
+            <p className="text-gray-600">
+              Collection Name: {productDetails.title}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <p>Loading collection details...</p>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default page
-
+export default Page;
