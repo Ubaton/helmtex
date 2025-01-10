@@ -43,19 +43,26 @@ function Products() {
             <div
               onClick={() => handleDetailsClick(items.id, items.title)}
               key={index}
-              className="border rounded-lg shadow-md p-4"
+              className="border rounded-xl  p-4"
             >
               <Image
                 src={items.imageUrl}
                 alt={items.title}
-                className="w-full h-48 object-cover mb-4"
+                className="w-full h-48 object-cover mb-4 rounded-lg"
                 priority={true}
                 quality={100}
                 width={600}
                 height={600}
               />
-              <h2 className="font-bold text-lg mb-2">{items.title}</h2>
-              <Button onClick={handleDetailsClick}>More Details</Button>
+              <h2 className="font-bold text-md mb-2">{items.title}</h2>
+              <div className="flex justify-end items-center">
+                <Button
+                  className="bg-white hover:bg-blue-500 text-black hover:text-white rounded-xl"
+                  onClick={handleDetailsClick}
+                >
+                  More Details
+                </Button>
+              </div>
             </div>
           );
         })}
