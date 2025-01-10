@@ -25,11 +25,15 @@ function Products() {
 
   const handleDetailsClick = (id, title) => {
     const product = products.find((p) => p.id === id);
-    router.push(
-      `/collections/${id}?title=${encodeURIComponent(
-        title
-      )}&imageUrl=${encodeURIComponent(product.imageUrl)}`
-    );
+    if (product && product.imageUrl) {
+      router.push(
+        `/collections/${id}?title=${encodeURIComponent(
+          title
+        )}&imageUrl=${encodeURIComponent(product.imageUrl)}`
+      );
+    } else {
+      // Handle the case where product or product.imageUrl is undefined
+    }
   };
 
   return (
@@ -43,7 +47,7 @@ function Products() {
             <div
               onClick={() => handleDetailsClick(items.id, items.title)}
               key={index}
-              className="border rounded-xl  p-4"
+              className="border rounded-xl p-4 cursor-pointer"
             >
               <Image
                 src={items.imageUrl}
