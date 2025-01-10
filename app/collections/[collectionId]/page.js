@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { React, useEffect, useState } from "react";
+import subset from "@/lib/subset";
 
 const Page = () => {
   const [productDetails, setProductDetails] = useState({
@@ -9,6 +10,7 @@ const Page = () => {
     title: null,
     imageUrl: null,
   });
+  const [matchedSubset, setMatchedSubset] = useState(null);
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -16,35 +18,47 @@ const Page = () => {
     const imageUrl = searchParams.get("imageUrl");
     const id = window.location.pathname.split("/").pop();
 
-    if (title && id && imageUrl) {
-      setProductDetails({ id, title, imageUrl });
+    try {
+      if (title && id && imageUrl) {
+        setProductDetails({ id, title, imageUrl });
+        const foundSubset = subset.find((range) => {
+          const category = Object.keys(range)[0];
+          return category === title;
+        });
+        setMatchedSubset(foundSubset);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }, [searchParams]);
 
   return (
     <div className="p-24">
-      {productDetails.id && productDetails.title ? (
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6">{productDetails.title}</h1>
-          {productDetails.imageUrl && (
-            <Image
-              src={productDetails.imageUrl}
-              alt={productDetails.title}
-              width={800}
-              height={600}
-              className="w-full h-96 object-cover rounded-lg shadow-lg mb-6"
-            />
-          )}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Collection Details</h2>
-            <p className="text-gray-600">Collection ID: {productDetails.id}</p>
-            <p className="text-gray-600">
-              Collection Name: {productDetails.title}
-            </p>
+      {matchedSubset ? (
+        <div>
+          <h2 className="text-2xl font-bold mb-4">{productDetails.title}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.entries(matchedSubset[productDetails.title]).map(
+              ([key, value]) => (
+                <div key={key} className="p-4 border rounded">
+                  <h3 className="text-xl mb-2">{value.title}</h3>
+                  <p className="mb-4">{value.content}</p>
+                  {value.image && (
+                    <Image
+                      src={value.image}
+                      alt={value.title}
+                      width={200}
+                      height={200}
+                      className="rounded-lg"
+                    />
+                  )}
+                </div>
+              )
+            )}
           </div>
         </div>
       ) : (
-        <p>Loading collection details...</p>
+        <p>No matching subset found.</p>
       )}
     </div>
   );
