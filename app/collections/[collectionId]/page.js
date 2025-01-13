@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { React, useEffect, useState } from "react";
+import subset from "@/lib/subset";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Page = () => {
   const [productDetails, setProductDetails] = useState({
@@ -9,42 +12,88 @@ const Page = () => {
     title: null,
     imageUrl: null,
   });
+  const [matchedSubset, setMatchedSubset] = useState(null);
   const searchParams = useSearchParams();
+  const imageUrl = searchParams.get("imageUrl");
+  const title = searchParams.get("title");
+  const router = useRouter();
 
   useEffect(() => {
     const title = searchParams.get("title");
     const imageUrl = searchParams.get("imageUrl");
     const id = window.location.pathname.split("/").pop();
 
-    if (title && id && imageUrl) {
-      setProductDetails({ id, title, imageUrl });
+    try {
+      if (title && id && imageUrl) {
+        setProductDetails({ id, title, imageUrl });
+        const foundSubset = subset.find((range) => {
+          const category = Object.keys(range)[0];
+          return category === title;
+        });
+        setMatchedSubset(foundSubset);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }, [searchParams]);
 
+  const handleClickBack = () => {
+    router.push("/products");
+  };
+
   return (
     <div className="p-24">
-      {productDetails.id && productDetails.title ? (
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6">{productDetails.title}</h1>
-          {productDetails.imageUrl && (
-            <Image
-              src={productDetails.imageUrl}
-              alt={productDetails.title}
-              width={800}
-              height={600}
-              className="w-full h-96 object-cover rounded-lg shadow-lg mb-6"
-            />
-          )}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Collection Details</h2>
-            <p className="text-gray-600">Collection ID: {productDetails.id}</p>
-            <p className="text-gray-600">
-              Collection Name: {productDetails.title}
-            </p>
+      <div className="relative mb-8">
+        <Image
+          src={imageUrl}
+          alt=""
+          className="object-fill w-full h-72 rounded-xl"
+          width={100}
+          height={50}
+        />
+        <div className="absolute top-4 left-4">
+          <div className="flex items-center space-x-2 mb-8">
+            <Button
+              variant="outline"
+              className="bg-white hover:bg-blue-500 text-black hover:text-white rounded-xl"
+              onClick={handleClickBack}
+            >
+              {" "}
+              <ArrowLeft />
+            </Button>
+          </div>
+        </div>
+        <h2 className="absolute top-[40%] left-[38%] text-4xl font-bold text-white">
+          {title}
+        </h2>
+      </div>
+      {matchedSubset ? (
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.entries(matchedSubset[productDetails.title]).map(
+              ([key, value]) => (
+                <div key={key} className="p-4 border rounded-xl">
+                  {value.image && (
+                    <Image
+                      src={value.image}
+                      alt={value.title}
+                      width={200}
+                      height={200}
+                      className="rounded-lg object-cover w-full h-76"
+                    />
+                  )}
+                  <div className="flex justify-between items-center pt-4">
+                    <p className="text-xl font-semibold">{value.content}</p>
+                    <p>{value.code}</p>
+                    <h3 className="text-xl text-blue-500">{value.title}</h3>
+                  </div>
+                </div>
+              )
+            )}
           </div>
         </div>
       ) : (
-        <p>Loading collection details...</p>
+        <p>No matching subset found.</p>
       )}
     </div>
   );
