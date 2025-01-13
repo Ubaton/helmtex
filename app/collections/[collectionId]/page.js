@@ -74,17 +74,24 @@ const Page = () => {
               ([key, value]) => (
                 <div key={key} className="p-4 border rounded-xl">
                   {value.image && (
-                    <Image
-                      src={value.image}
-                      alt={value.title}
-                      width={200}
-                      height={200}
-                      className="rounded-lg object-cover w-full h-76"
-                    />
+                    <>
+                      <div className="relative">
+                        <Image
+                          src={value.image}
+                          alt={value.title}
+                          width={200}
+                          height={200}
+                          className="rounded-lg object-cover w-full h-76"
+                        />
+                        <p className="absolute bottom-0 right-0 z-10 mb-2 mr-2 text-blue-500">
+                          {value.code}
+                        </p>
+                      </div>
+                    </>
                   )}
                   <div className="flex justify-between items-center pt-4">
                     <p className="text-xl font-semibold">{value.content}</p>
-                    <p>{value.code}</p>
+
                     <h3 className="text-xl text-blue-500">{value.title}</h3>
                   </div>
                 </div>
