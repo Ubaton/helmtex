@@ -69,7 +69,7 @@ const Page = () => {
       </div>
       {matchedSubset ? (
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {Object.entries(matchedSubset[productDetails.title]).map(
               ([key, value]) => (
                 <div key={key} className="p-4 border rounded-xl">
@@ -92,7 +92,7 @@ const Page = () => {
                   <div className="flex justify-between items-center pt-4">
                     <p className="text-xl font-semibold">{value.content}</p>
 
-                    <h3 className="text-xl text-blue-500">{value.title}</h3>
+                    <h3 className="text-xl text-blue-500">Design Code {value.title}</h3>
                   </div>
                 </div>
               )
