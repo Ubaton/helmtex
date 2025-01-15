@@ -92,7 +92,7 @@ const Page = () => {
                   <div className="flex justify-between items-center pt-4">
                     <p className="text-xl font-semibold">{value.content}</p>
 
-                    <h3 className="text-xl text-blue-500">Design Code {value.title}</h3>
+                    <h3 className="text-xl text-blue-500">{value.title}</h3>
                   </div>
                 </div>
               )

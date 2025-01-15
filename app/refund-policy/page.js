@@ -12,7 +12,7 @@ const RefundPolicy = () => {
           {/* Introduction */}
           <section>
             <p className="text-gray-600">
-              <strong>Effective Date:</strong> [Insert Date]
+              <strong>Effective Date:</strong> 15-01-2024
             </p>
             <p className="mt-2">
               At Helm Textile Mills, we are committed to customer satisfaction. If you are not satisfied with your purchase, we are here to help. Please review our refund policy for more information on how we handle returns, exchanges, and refunds.
