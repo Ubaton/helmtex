@@ -5,52 +5,52 @@ import { FaTwitter, FaFacebookF, FaWhatsapp, FaInstagram  } from "react-icons/fa
 const Profile = () => {
   const profiles = [
     {
-      name: "Jennifer Lochmann",
+      name: "Jenny Lochmann",
       profession: "Designer",
-      image: "https://via.placeholder.com/150",
+      image: "/female2.jpg",
       socialLinks: [
         { icon: FaFacebookF , url: "https://facebook.com/" },
         { icon: FaTwitter, url: "https://twitter.com/in/" },
         { icon: FaWhatsapp , url: "https://whatsapp.com/" },
         { icon: FaInstagram , url: "https://instagram.com/" },
       ],
-      onCopyEmail: () => alert("Email copied for John Smith!"),
+      contactNumber: "+27614091530",
     },
     {
       name: "Shéne Kraft",
       profession: "Designer",
-      image: "https://via.placeholder.com/150",
+      image: "/female3.jpg",
       socialLinks: [
         { icon: FaFacebookF, url: "https://facebook.com/" },
         { icon: FaTwitter, url: "https://twitter.com/in/" },
         { icon: FaWhatsapp, url: "https://whatsapp.com/" },
         { icon: FaInstagram , url: "https://instagram.com/" },
       ],
-      onCopyEmail: () => alert("Email copied for Jane Doe!"),
+      contactNumber: "1234567890",
     },
     {
         name: "Chrystal Noakes",
         profession: "Sales Representative",
-        image: "https://via.placeholder.com/150",
+        image: "/female1.jpg",
         socialLinks: [
           { icon: FaFacebookF, url: "https://facebook.com/" },
           { icon: FaTwitter, url: "https://twitter.com/in/" },
           { icon: FaWhatsapp, url: "https://whatsapp.com/" },
           { icon: FaInstagram , url: "https://instagram.com/" },
         ],
-        onCopyEmail: () => alert("Email copied for Jane Doe!"),
+        contactNumber: "1234567890",
       },
       {
         name: "Koketso Seshoka",
         profession: "Production Planner",
-        image: "https://via.placeholder.com/150",
+        image: "/male.jpg",
         socialLinks: [
           { icon: FaFacebookF, url: "https://example.com/profile2" },
           { icon: FaTwitter, url: "https://twitter.com/in/janedoe" },
           { icon: FaWhatsapp, url: "https://whatsapp.com/janedoe" },
           { icon: FaInstagram , url: "https://instagram.com/janedoe" },
         ],
-        onCopyEmail: () => alert("Email copied for Jane Doe!"),
+        contactNumber: "1234567890",
       },
 
   ];
