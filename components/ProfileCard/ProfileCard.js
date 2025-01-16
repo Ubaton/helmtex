@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { PhoneOutgoing } from "lucide-react";
 
 const ProfileCard = ({
   name = "John Doe",
@@ -36,7 +37,7 @@ const ProfileCard = ({
               href={link.url}
               target="_blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white transition"
+              className="text-gray-400 hover:text-white transition duration-300"
             >
               <link.icon className="w-5 h-5" />
             </a>
@@ -49,7 +50,7 @@ const ProfileCard = ({
             href={`tel:${contactNumber}`}
             className="bg-green-600 text-white text-sm py-2 px-4 rounded-full hover:bg-blue-700 transition"
           >
-            Get in touch
+            <PhoneOutgoing/>
           </Button>
         </div>
       </div>

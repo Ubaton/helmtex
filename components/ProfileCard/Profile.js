@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileCard from "./ProfileCard";
-import { FaTwitter, FaFacebookF, FaWhatsapp, FaInstagram  } from "react-icons/fa";
+import { FaFacebookF, FaWhatsapp, FaInstagram  } from "react-icons/fa";
+import { Mail } from "lucide-react";
 
 const Profile = () => {
   const profiles = [
@@ -10,11 +11,11 @@ const Profile = () => {
       image: "/female2.jpg",
       socialLinks: [
         { icon: FaFacebookF , url: "https://facebook.com/" },
-        { icon: FaTwitter, url: "https://twitter.com/in/" },
+        { icon: Mail, url: "https://twitter.com/in/" },
         { icon: FaWhatsapp , url: "https://whatsapp.com/" },
         { icon: FaInstagram , url: "https://instagram.com/" },
       ],
-      contactNumber: "+27614091530",
+      contactNumber: "+27114935495",
     },
     {
       name: "Shéne Kraft",
@@ -22,11 +23,11 @@ const Profile = () => {
       image: "/female3.jpg",
       socialLinks: [
         { icon: FaFacebookF, url: "https://facebook.com/" },
-        { icon: FaTwitter, url: "https://twitter.com/in/" },
+        { icon: Mail, url: "https://twitter.com/in/" },
         { icon: FaWhatsapp, url: "https://whatsapp.com/" },
         { icon: FaInstagram , url: "https://instagram.com/" },
       ],
-      contactNumber: "1234567890",
+      contactNumber: "+27114935495",
     },
     {
         name: "Chrystal Noakes",
@@ -34,23 +35,22 @@ const Profile = () => {
         image: "/female1.jpg",
         socialLinks: [
           { icon: FaFacebookF, url: "https://facebook.com/" },
-          { icon: FaTwitter, url: "https://twitter.com/in/" },
+          { icon: Mail, url: "https://twitter.com/in/" },
           { icon: FaWhatsapp, url: "https://whatsapp.com/" },
           { icon: FaInstagram , url: "https://instagram.com/" },
         ],
-        contactNumber: "1234567890",
+        contactNumber: "+27114935495",
       },
       {
         name: "Koketso Seshoka",
         profession: "Production Planner",
         image: "/male.jpg",
         socialLinks: [
-          { icon: FaFacebookF, url: "https://example.com/profile2" },
-          { icon: FaTwitter, url: "https://twitter.com/in/janedoe" },
+          { icon: Mail, url: "https://example.com/profile2" },
           { icon: FaWhatsapp, url: "https://whatsapp.com/janedoe" },
           { icon: FaInstagram , url: "https://instagram.com/janedoe" },
         ],
-        contactNumber: "1234567890",
+        contactNumber: "+27114935495",
       },
 
   ];
