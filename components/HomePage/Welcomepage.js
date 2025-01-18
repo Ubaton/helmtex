@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import backgroundImage from "@/public/assets/background4.jpg"
+import backgroundImage from "../../public/assets/background4.jpg"
 import { Button } from '../ui/button';
 import { ChevronUp } from 'lucide-react';
 

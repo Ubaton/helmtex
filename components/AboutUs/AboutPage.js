@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import backgroundImage from "@/public/assets/background.png"
-import displayImage from "@/public/assets/img2.jpg"
-import displayImage2 from "@/public/assets/img7.jpg"
+import backgroundImage from "../../public/assets/background.png"
+import displayImage from "../../public/assets/img2.jpg"
+import displayImage2 from "../../public/assets/img7.jpg"
 
 const logos = [
   { src: "/images/helm.png", alt: "Helm Textile Mills Logo" },

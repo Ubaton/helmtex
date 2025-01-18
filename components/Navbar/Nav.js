@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
-import HelmLogo from '@/public/images/helm.png';
+import HelmLogo from '../../public/images/helm.png';
 import { AlignJustify, X } from 'lucide-react';
 import { Button } from '../ui/button';
 
