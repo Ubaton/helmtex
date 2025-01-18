@@ -19,7 +19,7 @@ const FabricManufacturer = () => {
 
         {/* Content Section */}
         <div className="text-gray-800">
-          <h2 className="text-xl font-semibold mb-4">The Role of Fabric Manufacturers in the Textile Industry</h2>
+          <h2 className="text-xl font-semibold mb-2">The Role of Fabric Manufacturers in the Textile Industry</h2>
           <p className="mb-4">
             Fabric manufacturers are the backbone of the textile value chain. They transform raw materials such as cotton, wool, silk, 
             and synthetic fibers into the fabrics that grace runways, homes, 
@@ -38,8 +38,9 @@ const FabricManufacturer = () => {
           <li><span className="font-semibold">Advanced Weaving and Knitting Techniques</span>: Traditional techniques, honed over centuries, are combined with modern machinery to ensure precision and uniformity.</li> <br/>
           <li><span className="font-semibold">Stringent Quality Control Measures</span>: From initial fiber processing to the final fabric roll, every stage undergoes meticulous inspection to meet international standards.</li>
         </div>
+
         <div className="mt-6">
-          <h2 className="text-xl font-semibold mb-4">Helm Textile Mills Presents @Work Fabric Range</h2>
+          <h2 className="text-xl font-semibold mb-2">Helm Textile Mills Presents @Work Fabric Range</h2>
           <p>
             As one of the leading fabric manufacturers in South Africa, Helm Textile Mills proudly introduces its 2017 @work range of contract fabrics—a 
             versatile selection designed to meet the demanding needs of commercial and residential spaces. At Helm Textile Mills, we prioritize not only 
@@ -49,7 +50,7 @@ const FabricManufacturer = () => {
         </div>
 
         <div className="mt-6">
-          <h2 className="text-xl font-semibold mb-4">A Blend of Tradition and Modernity</h2>
+          <h2 className="text-xl font-semibold mb-2">A Blend of Tradition and Modernity</h2>
           <p className="mb-4">
             The @work collection is a testament to Helm Textile Mill's dedication to combining traditional 
             fabric qualities with contemporary colours. This carefully curated range balances the timeless appeal of classic 
@@ -82,11 +83,70 @@ const FabricManufacturer = () => {
             The Net series come in various colours like White, Platinum, Lime, Orange, Red, Royal, and Black brings a modern touch, often used as accent pieces or for areas that demand versatility.
           </li>
         </div>
+
         <div className="mt-6">
-          <h2 className="text-xl font-semibold mb-4">The Journey of a Leading Fabric Manufacturer in South Africa</h2>
+          <h2 className="text-xl font-semibold mb-2">The Journey of a Leading Fabric Manufacturer in South Africa</h2>
           <p>Textile manufacturing is a precise, multi-step process that requires expertise, innovation, and stringent quality control from raw materials
              to finished products. Companies like Helm Textile Mills, a fabric manufacturer in South Africa, have strengthened South Africa's 
              position in the textile industry by being committed to maintaining high standards and integrating sustainable practices into their production lines.
+          </p>
+        </div>
+        
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold mb-4">Understanding the Fabric Manufacturing Process</h2>
+          <ul className="font-semibold text-gray-800 mb-2">
+          Fibre Selection and Sourcing
+          </ul>
+          <p>
+            Every exceptional textile starts with a selection of high-quality fibres. As a fabric manufacturer in South Africa, Helm Textile Mills 
+            takes pride in choosing only the finest raw materials, whether natural fibres like cotton, linen, and wool or high-performance synthetic fibres 
+            like polyester and nylon. By sourcing responsibly, Helm Textile Mills ensures that the materials used deliver superior quality and support
+             sustainable and ethical practices within the supply chain.
+          </p>
+          <br/>
+          <ul className="font-semibold text-gray-800 mb-2">
+            Weaving and Knitting: The Art of Fabric Formation
+          </ul>
+          <p>
+            Weaving and knitting are the primary methods for turning yarn into fabric. Dobby and jacquard weaving techniques create unique patterns, textures, 
+            and resilient fabrics. Dobby looms are used for simpler patterns, often producing robust fabrics ideal for upholstery and apparel. In contrast, 
+            jacquard looms can weave complex, intricate patterns perfect for decorative or high-end applications.
+          </p>
+          <br/>
+          <ul className="font-semibold text-gray-800 mb-2">
+            Finishing Touches: Enhancing Fabric with Functional Benefits
+          </ul>
+          <p>
+            Finishing is a critical stage where fabrics are treated to enhance their qualities and usability. There are a range of finishing options, 
+            from water-repellent and stain-resistant coatings to specialised finishes that enhance fabric softness or increase durability. 
+            These finishes are crucial for making fabrics suitable for various applications, including outdoor, industrial, and high-wear environments.
+          </p>
+          <br/>
+          <ul className="font-semibold text-gray-800 mb-2">
+            Quality Control and Inspection: Guaranteeing Excellence
+          </ul>
+          <p>
+            Every fabric undergoes a rigorous quality control process before it reaches clients. It must be ensured that each batch meets its high standards 
+            through thorough testing for strength, colourfastness, abrasion resistance, and durability. By upholding these stringent checks, Helm Textile Mills 
+            guarantees a level of consistency and excellence that distinguishes it as a leader among fabric manufacturers in South Africa.
+          </p>
+        </div>
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold mb-4">Choosing the Right Fabric Manufacturer in South Africa</h2>
+          <p>Quality, customisation options, and reliability are essential when selecting a fabric manufacturer in South Africa. Look for manufacturers with
+             a proven track record, positive customer testimonials, and innovative products. The best fabric manufacturer in South Africa offers various 
+             options for different applications, from luxury home decor to rugged industrial textiles.
+          </p>
+          <br/>
+          <p>
+            Helm Textile Mills is not just a fabric manufacturer in South Africa; it's a partner in innovation and quality. With decades of expertise, 
+            an unwavering dedication to sustainability, and a passion for fabric excellence, Helm Textile Mills continues to shape the textile industry
+            with fabrics as durable as they are beautiful.
+          </p>
+          <br/>
+          <p>
+            Ready to elevate your next project? Discover Helm Textile Mills exceptional range and quality. Reach out to us today to request a sample 
+            or speak to one of our knowledgeable team members about how we can help bring your vision to life!
           </p>
         </div>
       </div>
