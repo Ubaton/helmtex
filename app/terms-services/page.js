@@ -78,7 +78,7 @@ const TermsAndServices = () => {
             <h2 className="text-2xl font-semibold mb-4">7. User Conduct</h2>
             <ul className="list-disc ml-6 space-y-2">
               <li>Use our website and services lawfully.</li>
-              <li>Not engage in activities that disrupt the website or infringe on others' rights.</li>
+              <li>Not engage in activities that disrupt the website or infringe on others&apos; rights.</li>
               <li>Refrain from sharing malicious software, spam, or unauthorized advertising.</li>
             </ul>
           </section>

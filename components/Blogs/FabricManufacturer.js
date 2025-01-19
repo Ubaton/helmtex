@@ -51,7 +51,7 @@ const FabricManufacturer = () => {
         <div className="mt-8">
           <h2 className="text-xl font-semibold mb-4">A Blend of Tradition and Modernity</h2>
           <p className="mb-6">
-            The @work collection is a testament to Helm Textile Mill's dedication to combining traditional fabric qualities with contemporary colours. This carefully curated range balances the timeless appeal of classic fabric styles with a vibrant colour palette, giving interior designers, architects, and homeowners alike more choices to match both older installations and fresh new spaces.
+            The @work collection is a testament to Helm Textile Mill&apos;s dedication to combining traditional fabric qualities with contemporary colours. This carefully curated range balances the timeless appeal of classic fabric styles with a vibrant colour palette, giving interior designers, architects, and homeowners alike more choices to match both older installations and fresh new spaces.
           </p>
           <ul className="space-y-6">
             <li>

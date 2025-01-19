@@ -162,7 +162,7 @@ const UpholsteryFabrics = () => {
               <li><span className="font-bold">Light Use:</span> Cotton or linen blends can suffice for less frequently used spaces.</li>
             </ul>
             <p className="mt-2">
-              <span className="font-bold">Double Rub Count:</span> Check the fabric's abrasion resistance (e.g., 15,000+ double rubs for residential use and 30,000+ for commercial).
+              <span className="font-bold">Double Rub Count:</span> Check the fabric&apos;s abrasion resistance (e.g., 15,000+ double rubs for residential use and 30,000+ for commercial).
             </p>
           </section>
 
@@ -176,21 +176,21 @@ const UpholsteryFabrics = () => {
               <li>Removable and washable slipcovers can also be a practical choice.</li>
             </ul>
             <p className="mt-2">
-              <span className="font-bold">Care Requirements:</span> Check for fabric-specific cleaning codes (e.g., "W" for water-based cleaners, "S" for solvent-based cleaners).
+              <span className="font-bold">Care Requirements:</span> Check for fabric-specific cleaning codes (e.g., &quot;W&quot; for water-based cleaners, &quot;S&quot; for solvent-based cleaners).
             </p>
           </section>
 
           <section className="mb-6">
             <h2 className="text-xl font-semibold mb-2">3. Style and Aesthetic</h2>
             <p className="mb-4">
-              <span className="font-bold">Pattern and Texture:</span> Match the fabric's look with your space's overall style:
+              <span className="font-bold">Pattern and Texture:</span> Match the fabric&apos;s look with your space&apos;s overall style:
             </p>
             <ul className="list-disc ml-6">
               <li>Bold patterns for statement pieces.</li>
               <li>Neutral colors and subtle textures for timeless and versatile designs.</li>
             </ul>
             <p className="mt-2">
-              <span className="font-bold">Color Selection:</span> Consider the furniture's surroundings and how well the color complements the decor:
+              <span className="font-bold">Color Selection:</span> Consider the furniture&apos;s surroundings and how well the color complements the decor:
             </p>
             <ul className="list-disc ml-6">
               <li>Dark colors for hiding stains in high-traffic areas.</li>
