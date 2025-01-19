@@ -42,7 +42,7 @@ const TermsOfUse = () => {
             <h2 className="text-2xl font-semibold mb-4">3. Prohibited Activities</h2>
             <ul className="list-disc ml-6 space-y-2">
               <li>Using the website for illegal purposes or to solicit unlawful activity.</li>
-              <li>Attempting to interfere with the website's functionality, including through hacking or introducing malicious code.</li>
+              <li>Attempting to interfere with the website&apos;s functionality, including through hacking or introducing malicious code.</li>
               <li>Impersonating another person or misrepresenting your affiliation with an entity.</li>
               <li>Using automated tools (e.g., bots, spiders) to access or scrape the website.</li>
             </ul>
@@ -52,7 +52,7 @@ const TermsOfUse = () => {
           <section>
             <h2 className="text-2xl font-semibold mb-4">4. User-Generated Content</h2>
             <p>
-              Users may submit content (e.g., reviews, comments) to the website, provided it is not illegal, defamatory, or infringing on others' rights. By submitting content, you grant Helm Textile Mills a non-exclusive, royalty-free, worldwide license to use, reproduce, and display the content.
+              Users may submit content (e.g., reviews, comments) to the website, provided it is not illegal, defamatory, or infringing on others&apos; rights. By submitting content, you grant Helm Textile Mills a non-exclusive, royalty-free, worldwide license to use, reproduce, and display the content.
             </p>
           </section>
 
@@ -76,7 +76,7 @@ const TermsOfUse = () => {
           <section>
             <h2 className="text-2xl font-semibold mb-4">7. Disclaimer of Warranties</h2>
             <p>
-              This website is provided "as is" without any warranties, express or implied. Helm Textile Mills makes no representations or warranties about the website's accuracy, completeness, or availability.
+              This website is provided &quot;as is&quot; without any warranties, express or implied. Helm Textile Mills makes no representations or warranties about the website&apos;s accuracy, completeness, or availability.
             </p>
           </section>
 
