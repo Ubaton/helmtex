@@ -19,7 +19,7 @@ const page = ({ params }) => {
     return (
         <div className="p-8">
             <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-            <img src={product.imageUrl} alt={product.title} className="w-full h-96 object-cover mb-4" />
+            <Image src={product.imageUrl} alt={product.title} className="w-full h-96 object-cover mb-4" />
             <p className="text-lg mb-4">Details about {product.title} in the {collection.name}.</p>
 
             <h2 className="text-xl font-semibold mb-2">Other products in {collection.name}:</h2>
