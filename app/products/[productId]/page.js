@@ -1,5 +1,4 @@
 import React from 'react';
-import { collections } from '@/components/ProductCard/Collection/data';
 import { notFound } from 'next/navigation';
 import Products from '@/components/ProductCard/Products';
 
