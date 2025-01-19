@@ -87,7 +87,7 @@ const Page = () => {
                     </>
                   )}
                   <div className="flex justify-between items-center pt-4">
-                    <p className="text-xl">Design Name</p>
+                    <p className="text-xl">Design</p>
 
                     <h3 className="text-xl font-semibold">{value.content}</h3>
                   </div>
