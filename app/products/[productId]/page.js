@@ -1,6 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Products from '@/components/ProductCard/Products';
+import Image from 'next/image';
 
 const page = ({ params }) => {
     const { collectionId, productId } = params;
