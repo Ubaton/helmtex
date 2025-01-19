@@ -15,7 +15,7 @@ const TermsOfUse = () => {
               <strong>Effective Date:</strong> 15-01-2024
             </p>
             <p className="mt-2">
-              Welcome to Helm Textile Mills' website. By accessing or using our website, you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, you must not use our website.
+              Welcome to Helm Textile Mills website. By accessing or using our website, you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, you must not use our website.
             </p>
           </section>
 
@@ -42,7 +42,7 @@ const TermsOfUse = () => {
             <h2 className="text-2xl font-semibold mb-4">3. Prohibited Activities</h2>
             <ul className="list-disc ml-6 space-y-2">
               <li>Using the website for illegal purposes or to solicit unlawful activity.</li>
-              <li>Attempting to interfere with the website’s functionality, including through hacking or introducing malicious code.</li>
+              <li>Attempting to interfere with the website's functionality, including through hacking or introducing malicious code.</li>
               <li>Impersonating another person or misrepresenting your affiliation with an entity.</li>
               <li>Using automated tools (e.g., bots, spiders) to access or scrape the website.</li>
             </ul>
