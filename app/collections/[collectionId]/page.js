@@ -74,8 +74,7 @@ const Page = () => {
               ([key, value]) => (
                 <div key={key} className="p-4 border rounded-xl">
                   {value.image && (
-                    <>
-                      <div className="relative">
+                    <div className="relative">
                         <Image
                           src={value.image}
                           alt={value.title}
@@ -84,7 +83,6 @@ const Page = () => {
                           className="rounded-lg object-cover w-full h-76"
                         />
                       </div>
-                    </>
                   )}
                   <div className="flex justify-between items-center pt-4">
                     <p className="text-xl">Design</p>
