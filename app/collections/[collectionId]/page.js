@@ -42,7 +42,7 @@ const Page = () => {
   };
 
   return (
-    <div className="p-24">
+    <div className="pt-24 container mx-auto px-4 py-6">
       <div className="relative mb-8">
         <Image
           src={imageUrl}
