@@ -69,7 +69,7 @@ const Page = () => {
       </div>
       {matchedSubset ? (
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {Object.entries(matchedSubset[productDetails.title]).map(
               ([key, value]) => (
                 <div key={key} className="p-4 border rounded-xl">
