@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import HelmLogo from "@/public/images/helm2.png";
 import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Links = [
   { name: "Home", link: "/" },
@@ -102,7 +103,7 @@ const Footer = () => {
                   <Facebook />
                 </a>
                 <a href="https://wa.me/+27824520560" aria-label="Whatsapp" className="hover:text-blue-500">
-                  <MessageCircleMore />
+                  <FaWhatsapp size={25}/>
                 </a>
                 <a href="https://www.instagram.com/helm_textiles/" aria-label="Instagram" className="hover:text-blue-500">
                   <Instagram />

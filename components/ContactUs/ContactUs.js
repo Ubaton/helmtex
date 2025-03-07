@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../Footer/Footer";
 import { Facebook, Instagram, Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"
 import Link from "next/link";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -43,7 +44,7 @@ const ContactPage = () => {
               <Facebook/>
             </a>
             <a href="https://wa.me/+27824520560" aria-label="Whatsapp" className="hover:text-blue-500">
-              <MessageCircleMore/>
+              <FaWhatsapp size={25}/>
             </a>
             <a href="https://www.instagram.com/helm_textiles/" aria-label="Instagram" className="hover:text-blue-500">
               <Instagram/>
@@ -110,7 +111,7 @@ const ContactPage = () => {
                 placeholder="Write your message..."
                 className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows="4"
-              ></Textarea>
+              />
             </div>
             <Button
               type="submit"
