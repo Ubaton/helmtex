@@ -8,18 +8,22 @@ import displayImage from "../../public/assets/img2.JPG"
 import displayImage2 from "../../public/assets/img7.JPG"
 
 const logos = [
-  { src: "/images/helm.png", alt: "Helm Textile Mills Logo" },
-  { src: "/images/weavers.png", alt: "Weavers World Logo" },
-  { src: "/images/themill.png", alt: "The Mill logo"},
-  { src: "/images/ulrich.png", alt: "Ulrich Seats logo"},
-  { src: "/images/citylodge.png", alt: "City Lodge Hotels logo"},
-  { src: "/images/stledger.png", alt: "St Ledger & Viney logo"},
-  { src: "/images/concept.png", alt: "Concept Africa logo"},
-  { src: "/images/africa.png", alt: "Africa Business logo"},  
-  { src: "/images/planet.png", alt: "Planet Seating logo"}, 
-  { src: "/images/malondie.png", alt: "Malondie logo"}, 
-  { src: "/images/maxhosa.png", alt: "MaXhosa logo"},
-  {/* more logos*/ }
+  { src: "/images/Custom.png", alt: "Helm Textile Mills Logo" },
+  { src: "/images/Diamond.png", alt: "Weavers World Logo" },
+  { src: "/images/Domestic.png", alt: "The Mill logo"},
+  { src: "/images/GreatOutdoor.png", alt: "Ulrich Seats logo"},
+  { src: "/images/WorkRange.png", alt: "City Lodge Hotels logo"},
+  { src: "/images/GreatPlains.png", alt: "St Ledger & Viney logo"},
+  { src: "/images/ScapeRange.png", alt: "Concept Africa logo"},
+  { src: "/images/SlubPlain.png", alt: "Africa Business logo"},  
+  { src: "/images/StudioExplore.png", alt: "Planet Seating logo"}, 
+  { src: "/images/TailorRange.png", alt: "Malondie logo"}, 
+  { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
+  { src: "/images/ValleyRange.png", alt: "MaXhosa logo"},
+  { src: "/images/WestCliff.png", alt: "MaXhosa logo"},
+  { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
+  { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
+  {/* more product logos*/ }
 ];
 
 const AboutPage = () => {
@@ -38,7 +42,7 @@ const AboutPage = () => {
           objectFit="cover"
           quality={100}
           priority={true}
-          className="rounded-lg shadow-lg w-full sm:w-auto"
+          className="rounded-lg shadow-lg w-full sm:w-auto "
         />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
         <div className="relative z-10 mx-auto text-center text-white">
@@ -126,8 +130,8 @@ const AboutPage = () => {
 
         {/* Logos */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mt-4">
-            Trusted by Industry Leaders
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mt-8">
+            Popular Trusted Products
           </h2>
         </div>
         <div
