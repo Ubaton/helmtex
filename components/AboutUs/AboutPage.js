@@ -21,8 +21,6 @@ const logos = [
   { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
   { src: "/images/ValleyRange.png", alt: "MaXhosa logo"},
   { src: "/images/WestCliff.png", alt: "MaXhosa logo"},
-  { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
-  { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
   {/* more product logos*/ }
 ];
 
@@ -42,7 +40,7 @@ const AboutPage = () => {
           objectFit="cover"
           quality={100}
           priority={true}
-          className="rounded-lg shadow-lg w-full sm:w-auto "
+          className="rounded-lg shadow-lg w-full sm:w-auto"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
         <div className="relative z-10 mx-auto text-center text-white">
@@ -129,9 +127,9 @@ const AboutPage = () => {
         </div>
 
         {/* Logos */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mt-8">
-            Popular Trusted Products
+            Popular Products
           </h2>
         </div>
         <div
