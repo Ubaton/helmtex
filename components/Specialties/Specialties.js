@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import img from "@/public/assets/img9.jpg";
+import img from "../../public/assets/img9.jpg";
 
 const Specialties = () => {
   return (
@@ -41,13 +41,15 @@ const Specialties = () => {
           <span className="font-semibold text-gray-800">Domestic Décor</span>
           <br />
           Our stunning range of upholstery, curtaining, throws, and cushions is
-          crafted to enhance the beauty and comfort of homes. Whether you're
-          looking for timeless elegance or contemporary designs, we offer
-          fabrics that bring your interior décor vision to life.
+          crafted to enhance the beauty and comfort of homes. Whether
+          you&apos;re looking for timeless elegance or contemporary designs, we
+          offer fabrics that bring your interior décor vision to life.
         </p>
         <br />
         <p>
-          <span className="font-semibold text-gray-800">Automotive Upholstery</span>
+          <span className="font-semibold text-gray-800">
+            Automotive Upholstery
+          </span>
           <br />
           From seat covers to interior linings, we manufacture specialized
           fabrics for the automotive industry. Our products are engineered to
