@@ -1,9 +1,10 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 function CollectionItem({ title, date, image }) {
   return (
     <div className="group">
-      <img
+      <Image
         src={image}
         alt={title}
         className="w-full h-64 object-cover rounded-md"
