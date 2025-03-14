@@ -1,13 +1,14 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import { Button } from "../ui/button";
 
 function ProductCarousel() {
   const ranges = [
     {
       title: "Customised Fabrics",
-      description: "This feature allows you to get your private taste in your home.",
+      description:
+        "This feature allows you to get your private taste in your home.",
       imageUrl: "/assets/customise.jpg",
     },
     {
@@ -21,55 +22,56 @@ function ProductCarousel() {
       imageUrl: "/assets/domestic.jpg",
     },
     {
-        title: "Studio Explore",
-        description: "Description here",
-        imageUrl: "/assets/explore.jpg",
-      },
-      {
-        title: "The Great Outdoor",
-        description: "Solution dyed fabrics, which achieve international norms, or hybrid fabrics are also offered and can be custom made to your needs",
-        imageUrl: "/assets/outdoor.jpg",
-      },
-      {
-        title: "The Great Plains",
-        description: "Description here",
-        imageUrl: "/assets/plains.jpg",
-      },
-      {
-        title: "Scape Range",
-        description: "Description here",
-        imageUrl: "/assets/scape.jpg",
-      },
-      {
-        title: "Slub Plain",
-        description: "Description here",
-        imageUrl: "/assets/slub.jpg",
-      },
-      {
-        title: "Studio Range",
-        description: "Description here",
-        imageUrl: "/assets/studio.jpg",
-      },
-      {
-        title: "Tailor Range",
-        description: "Description here",
-        imageUrl: "/assets/tailor.jpg",
-      },
-      {
-        title: "Valley Range",
-        description: "Description here",
-        imageUrl: "/assets/valley.jpg",
-      },
-      {
-        title: "Westcliff Range",
-        description: "Description here",
-        imageUrl: "/assets/westcliff.jpg",
-      },
-      {
-        title: "@Work Range",
-        description: "Description here",
-        imageUrl: "/assets/workrange.jpg",
-      },
+      title: "Studio Explore",
+      description: "Description here",
+      imageUrl: "/assets/explore.jpg",
+    },
+    {
+      title: "The Great Outdoor",
+      description:
+        "Solution dyed fabrics, which achieve international norms, or hybrid fabrics are also offered and can be custom made to your needs",
+      imageUrl: "/assets/outdoor.jpg",
+    },
+    {
+      title: "The Great Plains",
+      description: "Description here",
+      imageUrl: "/assets/plains.jpg",
+    },
+    {
+      title: "Scape Range",
+      description: "Description here",
+      imageUrl: "/assets/scape.jpg",
+    },
+    {
+      title: "Slub Plain",
+      description: "Description here",
+      imageUrl: "/assets/slub.jpg",
+    },
+    {
+      title: "Studio Range",
+      description: "Description here",
+      imageUrl: "/assets/studio.jpg",
+    },
+    {
+      title: "Tailor Range",
+      description: "Description here",
+      imageUrl: "/assets/tailor.jpg",
+    },
+    {
+      title: "Valley Range",
+      description: "Description here",
+      imageUrl: "/assets/valley.jpg",
+    },
+    {
+      title: "Westcliff Range",
+      description: "Description here",
+      imageUrl: "/assets/westcliff.jpg",
+    },
+    {
+      title: "@Work Range",
+      description: "Description here",
+      imageUrl: "/assets/workrange.jpg",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -80,7 +82,7 @@ function ProductCarousel() {
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, goToNext]);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -88,11 +90,12 @@ function ProductCarousel() {
     setCurrentIndex(newIndex);
   };
 
-  const goToNext = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const goToNext = useCallback(() => {
     const isLastSlide = currentIndex === ranges.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-  };
+  });
 
   const previousIndex = (currentIndex - 1 + ranges.length) % ranges.length;
   const nextIndex = (currentIndex + 1) % ranges.length;
@@ -114,7 +117,9 @@ function ProductCarousel() {
             quality={100}
           />
           <div className="p-2">
-            <p className="text-sm text-gray-400">{ranges[previousIndex].title}</p>
+            <p className="text-sm text-gray-400">
+              {ranges[previousIndex].title}
+            </p>
           </div>
         </div>
 
@@ -130,7 +135,9 @@ function ProductCarousel() {
             quality={100}
           />
           <div className="p-4">
-            <p className="text-sm text-gray-500">{ranges[currentIndex].capacity}</p>
+            <p className="text-sm text-gray-500">
+              {ranges[currentIndex].capacity}
+            </p>
             <h3 className="text-lg font-bold">{ranges[currentIndex].title}</h3>
             <p className="text-gray-700">{ranges[currentIndex].description}</p>
           </div>

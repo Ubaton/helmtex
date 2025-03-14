@@ -5,7 +5,7 @@ import {
   addDoc,
   Timestamp,
 } from "firebase/firestore";
-import { app } from "../../../lib/firebase"; // Adjust this import path to where your Firebase app is initialized
+import app from "../../../lib/firebase";
 
 // Initialize Firestore
 const db = getFirestore(app);

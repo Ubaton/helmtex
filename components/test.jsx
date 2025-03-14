@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import subset from "@/lib/subset";
+import subset from "../lib/subset";
 import Image from "next/image";
 
 const Test = () => {
