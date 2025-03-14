@@ -139,7 +139,7 @@ const PhotoGalleryInfiniteScroll = () => {
       <h1 className="text-3xl font-bold mb-8 text-center">Photo Gallery</h1>
 
       {initialLoading ? (
-        <div className="flex justify-center items-center py-20">
+        <div className="flex justify-center items-center py-20 h-screen">
           <Loader2 className="h-8 w-8 animate-spin mr-2" />
           <span>Loading gallery...</span>
         </div>

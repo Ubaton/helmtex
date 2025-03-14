@@ -50,7 +50,7 @@ const InfoSection = () => {
           src={img3}
           alt="background"
           fill
-          priority
+          priority={true}
           quality={100}
           className="rounded-2xl object-cover"
         />
