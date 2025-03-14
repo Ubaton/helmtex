@@ -61,7 +61,7 @@ function Products() {
               <h2 className="font-bold text-md mb-2">{items.title}</h2>
               <div className="flex justify-end items-center">
                 <Button
-                  className="bg-white hover:bg-blue-500 text-black hover:text-white rounded-xl"
+                  className="bg-blue-500/80 hover:bg-blue-500 text-white rounded-xl"
                   onClick={handleDetailsClick}
                 >
                   More Details

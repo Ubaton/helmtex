@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import { React, useEffect, useState } from "react";
-import subset from "@/lib/subset";
+import { React, Suspense, useEffect, useState } from "react";
+import subset from "../../../lib/subset";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 
-const Page = () => {
+const Collection = () => {
   const [productDetails, setProductDetails] = useState({
     id: null,
     title: null,
@@ -69,22 +69,29 @@ const Page = () => {
       </div>
       {matchedSubset ? (
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {Object.entries(matchedSubset[productDetails.title]).map(
               ([key, value]) => (
                 <div key={key} className="p-4 border rounded-xl">
                   {value.image && (
-                    <Image
-                      src={value.image}
-                      alt={value.title}
-                      width={200}
-                      height={200}
-                      className="rounded-lg object-cover w-full h-76"
-                    />
+                    <>
+                      <div className="relative">
+                        <Image
+                          src={value.image}
+                          alt={value.title}
+                          width={200}
+                          height={200}
+                          className="rounded-lg object-cover w-full h-76"
+                        />
+                        <p className="absolute bottom-0 right-0 z-10 mb-2 mr-2 text-blue-500">
+                          {value.code}
+                        </p>
+                      </div>
+                    </>
                   )}
                   <div className="flex justify-between items-center pt-4">
                     <p className="text-xl font-semibold">{value.content}</p>
-                    <p>{value.code}</p>
+
                     <h3 className="text-xl text-blue-500">{value.title}</h3>
                   </div>
                 </div>
@@ -99,4 +106,12 @@ const Page = () => {
   );
 };
 
-export default Page;
+const CollectionPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Collection />
+    </Suspense>
+  );
+};
+
+export default CollectionPage;
