@@ -188,10 +188,7 @@ const PhotoGalleryInfiniteScroll = () => {
         </div>
       ) : allImages.length === 0 ? (
         <div className="text-center py-20">
-          <p>
-            No images found in storage. Please upload some images to view them
-            here.
-          </p>
+          <p>No images found. Please refresh the page.</p>
         </div>
       ) : (
         <>
