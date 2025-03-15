@@ -33,7 +33,6 @@ const logos = [
   { src: "/images/planet.png", alt: "Planet Seating logo" },
   { src: "/images/malondie.png", alt: "Malondie logo" },
   { src: "/images/maxhosa.png", alt: "MaXhosa logo" },
-
   {
     /* more logos*/
   },

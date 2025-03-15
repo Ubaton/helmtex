@@ -328,4 +328,4 @@ export default FabricManufacturer;const FabricManufacturer = () => {
   );
 };
 
-export default FabricManufacturer;v
+export default FabricManufacturer;
