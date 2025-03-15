@@ -7,11 +7,16 @@
         "Embla",
         "Glencarin",
         "Heimtextil",
+        "Houndsly",
+        "Koketso",
         "Kommetjie",
+        "Lawley",
         "malondie",
         "Milnerton",
         "Monwabisi",
         "Noordhoek",
+        "noreferrer",
+        "Seshoka",
         "Stijlinstituut",
         "stledger",
         "themill",
@@ -20,5 +25,10 @@
         "Welcomepage",
         "Westcliff",
         "workrange"
+    ],
+    "cSpell.ignoreWords": [
+        "Lochmann",
+        "Noakes",
+        "Shéne"
     ]
 }

@@ -8,12 +8,19 @@ import {
   DialogContent,
   DialogClose,
   DialogTitle,
+} from "../../components/ui/dialog";
+import { Button } from "../../components/ui/button";
+import { ChevronLeft, ChevronRight, X, Loader2 } from "lucide-react";
+import { storage } from "../../lib/firebase";
+import { ref, listAll, getDownloadURL } from "firebase/storage";
+
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X, Loader2 } from "lucide-react";
 import { storage } from "@/lib/firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { Skeleton } from "@/components/ui/skeleton";
+
 
 const PhotoGalleryInfiniteScroll = () => {
   const [allImages, setAllImages] = useState([]);
@@ -24,6 +31,7 @@ const PhotoGalleryInfiniteScroll = () => {
   const [loading, setLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
   const [imageLoadingStates, setImageLoadingStates] = useState({});
+
 
   const imagesPerLoad = 20;
   const hasMoreImages = visibleCount < allImages.length;
@@ -66,6 +74,7 @@ const PhotoGalleryInfiniteScroll = () => {
         const fetchedImages = await fetchImages();
         if (fetchedImages.length > 0) {
           setAllImages(fetchedImages);
+
 
           // Initialize loading states for all images
           const initialLoadingStates = {};
@@ -183,6 +192,9 @@ const PhotoGalleryInfiniteScroll = () => {
       <h1 className="text-3xl font-bold mb-8 text-center">Photo Gallery</h1>
 
       {initialLoading ? (
+        <div className="flex justify-center items-center py-20 h-screen">
+          <Loader2 className="h-8 w-8 animate-spin mr-2" />
+          <span>Loading gallery...</span>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {renderSkeletons()}
         </div>
@@ -210,6 +222,14 @@ const PhotoGalleryInfiniteScroll = () => {
                 onClick={() => handleImageClick(image, index)}
               >
                 <div className="relative w-full h-full aspect-[4/3]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover w-full h-full"
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN88P/BfwAJeAFs4TkCkAAAAABJRU5ErkJggg=="
                   {imageLoadingStates[image.id] && (
                     <Skeleton className="w-full h-full absolute z-10" />
                   )}
@@ -237,6 +257,10 @@ const PhotoGalleryInfiniteScroll = () => {
               className="flex justify-center items-center py-8"
             >
               {loading ? (
+                <div className="flex items-center gap-2">
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  <span>Loading more images...</span>
+                </div>
                 <>
                   <div className="flex items-center gap-2 mb-8">
                     <Loader2 className="h-5 w-5 animate-spin" />
@@ -281,6 +305,7 @@ const PhotoGalleryInfiniteScroll = () => {
 
                 <div className="relative w-full aspect-[4/3]">
                   <Image
+                    src={selectedImage}
                     src={selectedImage || "/placeholder.svg"}
                     alt={`Photo ${selectedIndex + 1}`}
                     fill

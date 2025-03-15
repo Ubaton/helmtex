@@ -8,6 +8,20 @@ import displayImage from "../../public/assets/img2.jpg";
 import displayImage2 from "../../public/assets/img7.jpg";
 
 const logos = [
+  { src: "/images/Custom.png", alt: "Helm Textile Mills Logo" },
+  { src: "/images/Diamond.png", alt: "Weavers World Logo" },
+  { src: "/images/Domestic.png", alt: "The Mill logo"},
+  { src: "/images/GreatOutdoor.png", alt: "Ulrich Seats logo"},
+  { src: "/images/WorkRange.png", alt: "City Lodge Hotels logo"},
+  { src: "/images/GreatPlains.png", alt: "St Ledger & Viney logo"},
+  { src: "/images/ScapeRange.png", alt: "Concept Africa logo"},
+  { src: "/images/SlubPlain.png", alt: "Africa Business logo"},  
+  { src: "/images/StudioExplore.png", alt: "Planet Seating logo"}, 
+  { src: "/images/TailorRange.png", alt: "Malondie logo"}, 
+  { src: "/images/StudioRange.png", alt: "MaXhosa logo"},
+  { src: "/images/ValleyRange.png", alt: "MaXhosa logo"},
+  { src: "/images/WestCliff.png", alt: "MaXhosa logo"},
+
   { src: "/images/helm.png", alt: "Helm Textile Mills Logo" },
   { src: "/images/weavers.png", alt: "Weavers World Logo" },
   { src: "/images/themill.png", alt: "The Mill logo" },
