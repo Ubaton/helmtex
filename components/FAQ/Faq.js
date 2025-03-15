@@ -6,12 +6,12 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "../../components/ui/accordion";
 
 export default function Faq({ question, answer }) {
   return (
     <div>
-        <Accordion type="single" collapsible className="w-full m-2">
+      <Accordion type="single" collapsible className="w-full m-2">
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-left text-lg font-medium hover:text-primary">
             {question}

@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import { React, useEffect, useState } from "react";
-import subset from "@/lib/subset";
+import { React, Suspense, useEffect, useState } from "react";
+import subset from "../../../lib/subset";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 
-const Page = () => {
+const Collection = () => {
   const [productDetails, setProductDetails] = useState({
     id: null,
     title: null,
@@ -108,4 +108,12 @@ const Page = () => {
   );
 };
 
-export default Page;
+const CollectionPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Collection />
+    </Suspense>
+  );
+};
+
+export default CollectionPage;

@@ -1,4 +1,4 @@
-import { articles } from "@/lib/data";
+import { articles } from "../../../lib/data";
 
 const BlogPost = async ({ params }) => {
   const { slug } = await params;
