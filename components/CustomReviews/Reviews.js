@@ -1,7 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import backgroundImage from "../../public/assets/background2.JPG"
-
+import React from "react";
+import Image from "next/image";
+import backgroundImage from "../../public/assets/background2.jpg";
 
 const reviews = [
   {
@@ -45,8 +44,12 @@ const Reviews = () => {
               key={index}
               className="bg-[#00378b] shadow-lg p-6 sm:p-8 rounded-lg h-auto flex flex-col justify-between"
             >
-              <p className="italic text-gray-100 mb-4">&quot;{review.text}&quot;</p>
-              <p className="text-right font-semibold text-gray-100 mt-4">{review.author}</p>
+              <p className="italic text-gray-100 mb-4">
+                &quot;{review.text}&quot;
+              </p>
+              <p className="text-right font-semibold text-gray-100 mt-4">
+                {review.author}
+              </p>
             </div>
           ))}
         </div>
