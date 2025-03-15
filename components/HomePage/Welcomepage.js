@@ -1,12 +1,79 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import backgroundImage from "../../public/assets/background4.jpg";
-import { Button } from "../ui/button";
-import { ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ChevronUp, ChevronLeft, ChevronRight } from "lucide-react";
 
 const WelcomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState("next"); // Track slide direction
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Images for the slider
+  const images = [
+    "/assets/background4.jpg",
+    "/assets/background5.jpg",
+    "/assets/background3.jpg",
+    "/assets/background2.jpg",
+    "/assets/background.png",
+  ];
+
+  // Manual navigation functions
+  const goToNextSlide = useCallback(() => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    setDirection("next");
+    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+
+    // Reset animation lock after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000); // Match this with the CSS transition duration
+  }, [images.length, isAnimating]);
+
+  const goToPrevSlide = useCallback(() => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    setDirection("prev");
+    setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+
+    // Reset animation lock after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000); // Match this with the CSS transition duration
+  }, [images.length, isAnimating]);
+
+  // Go to specific slide
+  const goToSlide = useCallback(
+    (index) => {
+      if (isAnimating || index === currentSlide) return;
+
+      setIsAnimating(true);
+      // Determine direction based on index
+      if (index > currentSlide) {
+        setDirection("next");
+      } else if (index < currentSlide) {
+        setDirection("prev");
+      } else {
+        // Special case for wrapping around
+        if (index === 0 && currentSlide === images.length - 1) {
+          setDirection("next");
+        } else if (index === images.length - 1 && currentSlide === 0) {
+          setDirection("prev");
+        }
+      }
+
+      setCurrentSlide(index);
+
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 1000);
+    },
+    [currentSlide, isAnimating, images.length]
+  );
 
   // Toggle visibility of the scroll-to-top button based on scroll position
   useEffect(() => {
@@ -21,6 +88,17 @@ const WelcomePage = () => {
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
+
+  // Auto slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isAnimating) {
+        goToNextSlide();
+      }
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [goToNextSlide, isAnimating]);
 
   // Enhanced smooth scroll-to-top functionality
   const scrollToTop = () => {
@@ -58,18 +136,51 @@ const WelcomePage = () => {
   };
 
   return (
-    <div className="relative h-screen bg-cover">
-      <Image
-        src={backgroundImage}
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        priority={true}
-        className="bg-center sm:bg-right md:bg-center lg-bg-cover"
-      />
-      <div className="absolute inset-0 bg-black opacity-65" />
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-8">
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Image Slider */}
+      <div className="absolute inset-0 w-full h-full">
+        {images.map((image, index) => {
+          // Determine the position of each slide
+          let position = "";
+
+          if (index === currentSlide) {
+            position = "translate-x-0"; // Current slide in view
+          } else if (direction === "next") {
+            // For "next" direction transitions
+            position =
+              index === (currentSlide + images.length - 1) % images.length
+                ? "-translate-x-full" // Previous slide moves off to the left
+                : "translate-x-full"; // All other slides wait off-screen to the right
+          } else {
+            // For "prev" direction transitions
+            position =
+              index === (currentSlide + 1) % images.length
+                ? "translate-x-full" // Next slide moves off to the right
+                : "-translate-x-full"; // All other slides wait off-screen to the left
+          }
+
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${position}`}
+              style={{ willChange: "transform" }}
+            >
+              <Image
+                src={image || "/placeholder.svg"}
+                alt={`Slide ${index + 1}`}
+                fill
+                priority={index === currentSlide}
+                className="object-cover"
+              />
+            </div>
+          );
+        })}
+        {/* Overlay to darken images */}
+        <div className="absolute inset-0 bg-black opacity-65" />
+      </div>
+
+      {/* Fixed Content - This stays on screen at all times */}
+      <div className="relative z-30 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-8">
         <h1 className="text-md sm:text-lg md:text-2xl font-light uppercase tracking-wider animate-fade-in-up">
           Welcome to
         </h1>
@@ -80,6 +191,43 @@ const WelcomePage = () => {
           SA&apos;s Leading Textile Company
         </h3>
       </div>
+
+      {/* Slider Navigation - Below the fixed content */}
+      <div className="absolute bottom-10 left-0 right-0 z-30 flex justify-center gap-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              currentSlide === index ? "bg-white scale-125" : "bg-white/50"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+            disabled={isAnimating}
+          />
+        ))}
+      </div>
+
+      {/* Slider Arrows */}
+      <button
+        onClick={goToPrevSlide}
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all ${
+          isAnimating ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        aria-label="Previous slide"
+        disabled={isAnimating}
+      >
+        <ChevronLeft className="h-6 w-6" />
+      </button>
+      <button
+        onClick={goToNextSlide}
+        className={`absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all ${
+          isAnimating ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        aria-label="Next slide"
+        disabled={isAnimating}
+      >
+        <ChevronRight className="h-6 w-6" />
+      </button>
 
       {/* Scroll-to-Top Button with Tailwind Animations */}
       <div
