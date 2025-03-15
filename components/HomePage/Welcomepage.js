@@ -195,7 +195,7 @@ const WelcomePage = () => {
       {/* Slider Navigation - Below the fixed content */}
       <div className="absolute bottom-10 left-0 right-0 z-30 flex justify-center gap-2">
         {images.map((_, index) => (
-          <button
+          <Button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all ${
@@ -208,17 +208,17 @@ const WelcomePage = () => {
       </div>
 
       {/* Slider Arrows */}
-      <button
+      <Button
         onClick={goToPrevSlide}
-        className={`absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all ${
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white px-2 rounded-full transition-all ${
           isAnimating ? "opacity-50 cursor-not-allowed" : ""
         }`}
         aria-label="Previous slide"
         disabled={isAnimating}
       >
         <ChevronLeft className="h-6 w-6" />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={goToNextSlide}
         className={`absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all ${
           isAnimating ? "opacity-50 cursor-not-allowed" : ""
@@ -227,7 +227,7 @@ const WelcomePage = () => {
         disabled={isAnimating}
       >
         <ChevronRight className="h-6 w-6" />
-      </button>
+      </Button>
 
       {/* Scroll-to-Top Button with Tailwind Animations */}
       <div
