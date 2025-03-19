@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { ChevronUp, ChevronLeft, ChevronRight } from "lucide-react";
 
 const WelcomePage = () => {
