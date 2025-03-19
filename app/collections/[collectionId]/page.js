@@ -3,8 +3,14 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import subset from "../../../lib/subset";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import { Button } from "../../../components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+  DialogTitle,
+} from "../../../components/ui/dialog";
 
 const Collection = () => {
   const [productDetails, setProductDetails] = useState({
@@ -13,6 +19,8 @@ const Collection = () => {
     imageUrl: null,
   });
   const [matchedSubset, setMatchedSubset] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const searchParams = useSearchParams();
   const imageUrl = searchParams.get("imageUrl");
   const title = searchParams.get("title");
@@ -41,10 +49,23 @@ const Collection = () => {
     router.push("/products");
   };
 
+  const openImageDialog = (imageSrc, imageAlt) => {
+    setSelectedImage({ src: imageSrc, alt: imageAlt });
+    setIsDialogOpen(true);
+  };
+
   return (
-    <div className="p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 w-full pt-24">
+    <div className="p-4 sm:p-6 md:p-8 lg:p-12 xl:pt-24 xl:px-16 xl:pb-16 w-full pt-24">
       <div className="relative mb-4 sm:mb-6 md:mb-8">
-        <div className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-72">
+        <div
+          className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-72 cursor-pointer"
+          onClick={() =>
+            openImageDialog(
+              imageUrl || "/api/placeholder/800/400",
+              title || "Collection image"
+            )
+          }
+        >
           <Image
             src={imageUrl || "/api/placeholder/800/400"}
             alt={title || "Collection image"}
@@ -74,7 +95,15 @@ const Collection = () => {
               ([key, value]) => (
                 <div key={key} className="p-3 sm:p-4 border rounded-xl w-full">
                   {value.image && (
-                    <div className="relative w-full h-48 sm:h-56 md:h-64">
+                    <div
+                      className="relative w-full h-48 sm:h-56 md:h-64 cursor-pointer"
+                      onClick={() =>
+                        openImageDialog(
+                          value.image,
+                          value.title || "Product image"
+                        )
+                      }
+                    >
                       <Image
                         src={value.image}
                         alt={value.title || "Product image"}
@@ -105,6 +134,37 @@ const Collection = () => {
           <p className="text-gray-500">No matching subset found.</p>
         </div>
       )}
+
+      {/* Image Zoom Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-5xl w-full p-0 overflow-hidden bg-black/90">
+          <DialogTitle className="sr-only">
+            {selectedImage?.alt || "Image Preview"}
+          </DialogTitle>
+          <div className="absolute top-2 right-2 z-10">
+            <DialogClose asChild>
+              <Button
+                variant="ghost"
+                className="h-8 w-8 p-0 text-white hover:bg-white/20 rounded-full"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </DialogClose>
+          </div>
+          <div className="relative w-full h-[80vh] flex items-center justify-center">
+            {selectedImage && (
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="object-contain"
+                fill
+                sizes="100vw"
+                priority
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
