@@ -8,12 +8,12 @@ import {
   DialogContent,
   DialogClose,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+} from "../../components/ui/dialog";
+import { Button } from "../../components/ui/button";
 import { ChevronLeft, ChevronRight, X, Loader2 } from "lucide-react";
-import { storage } from "@/lib/firebase";
+import { storage } from "../../lib/firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../../components/ui/skeleton";
 
 const PhotoGalleryInfiniteScroll = () => {
   const [allImages, setAllImages] = useState([]);
@@ -261,9 +261,7 @@ const PhotoGalleryInfiniteScroll = () => {
         <DialogContent className="max-w-5xl p-0 overflow-hidden bg-background">
           <DialogTitle className="sr-only">Image Preview</DialogTitle>
           <div className="relative">
-            <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-background/80 p-2">
-              <X className="h-4 w-4" />
-            </DialogClose>
+            <DialogClose className="absolute right-4 top-4 z-10 rounded-full text-black p-4" />
 
             {selectedImage && (
               <div className="flex items-center justify-center">
