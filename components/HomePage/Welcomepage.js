@@ -12,10 +12,10 @@ const WelcomePage = () => {
 
   // Images for the slider
   const images = [
-    "/assets/background4.jpg",
-    "/assets/background5.jpg",
-    "/assets/background3.jpg",
-    "/assets/background2.jpg",
+    "/assets/background4.png",
+    "/assets/background5.png",
+    "/assets/background3.png",
+    "/assets/background2.png",
     "/assets/background.png",
   ];
 
