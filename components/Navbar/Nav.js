@@ -15,7 +15,6 @@ const Nav = () => {
     { name: "Blog", link: "/blog" },
     { name: "Gallery", link: "/gallery" },
     { name: "Contact Us", link: "/contacts" },
-    { name: "FAQ", link: "/faq" },
   ];
 
   const toggleMenu = () => {
