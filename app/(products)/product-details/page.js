@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
 import { collections } from "../../../components/ProductCard/Collection/data";
 import { notFound } from "next/navigation";
 import Products from "../../../components/ProductCard/Products";
 import Image from "next/image";
 
-const page = ({ params }) => {
+export default function Page({ params }) {
   const { collectionId, productId } = params;
   const collection = collections.find((c) => c.id === collectionId);
 
@@ -42,6 +44,4 @@ const page = ({ params }) => {
       </div>
     </div>
   );
-};
-
-export default page;
+}

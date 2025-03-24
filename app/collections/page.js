@@ -2,15 +2,15 @@
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import subset from "../../../lib/subset";
+import subset from "../../lib/subset";
 import { ArrowLeft, X } from "lucide-react";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogClose,
   DialogTitle,
-} from "../../../components/ui/dialog";
+} from "../../components/ui/dialog";
 
 const Collection = () => {
   const [productDetails, setProductDetails] = useState({

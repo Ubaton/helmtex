@@ -27,12 +27,12 @@ function Products() {
     const product = products.find((p) => p.id === id);
     if (product && product.imageUrl) {
       router.push(
-        `/collections/${id}?title=${encodeURIComponent(
+        `/collections/?title=${encodeURIComponent(
           title
         )}&imageUrl=${encodeURIComponent(product.imageUrl)}`
       );
     } else {
-      // Handle the case where product or product.imageUrl is undefined
+      return;
     }
   };
 
