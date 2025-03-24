@@ -20,7 +20,7 @@ const FaqQuestions = () => {
       question:
         "What are the minimum order quantities for bulk fabric purchases?",
       answer: [
-        "Our minimum order quantity typically starts at 500 yards, but we can adjust based on special requirements and project scope.",
+        "Our minimum order quantity typically starts at 500 meters, but we can adjust based on special requirements and project scope.",
       ],
     },
     {
@@ -34,7 +34,7 @@ const FaqQuestions = () => {
       question:
         "What is the typical lead time for an order from production to delivery?",
       answer: [
-        "The average lead time is between 4 to 8 weeks, depending on the complexity of the order and the current production schedule.",
+        "The average lead time is between 1 to 4 weeks, depending on the complexity of the order and the current production schedule.",
       ],
     },
     {
@@ -98,7 +98,7 @@ const FaqQuestions = () => {
     },
     {
       question: "Do you ship internationally?",
-      answer: ["No, we only deliver locally"],
+      answer: ["We only do local deliveries."],
     },
     {
       question: "Is there a warranty or guarantee on your products?",

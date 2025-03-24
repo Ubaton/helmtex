@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import backgroundImage from "../../public/assets/background2.jpg";
+import backgroundImage from "../../public/assets/background2.png";
 
 const reviews = [
   {
@@ -34,7 +34,7 @@ const Reviews = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4 py-4 sm:py-16 md:py-20 lg:py-24">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white md:mb-24">
           What Our Customers Say About Us!
         </h2>

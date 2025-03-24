@@ -95,6 +95,11 @@ const Footer = () => {
                 Blog
               </a>
             </li>
+            <li>
+              <a href="\faq" className="hover:text-blue-500 hover:underline">
+                FAQ
+              </a>
+            </li>
           </ul>
         </div>
 

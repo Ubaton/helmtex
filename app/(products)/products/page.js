@@ -1,4 +1,4 @@
-import Products from "../../components/ProductCard/Products";
+import Products from "../../../components/ProductCard/Products";
 import React from "react";
 
 const page = () => {
