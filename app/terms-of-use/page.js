@@ -4,8 +4,8 @@ import React from "react";
 
 const TermsOfUse = () => {
   return (
-    <div className="font-sans bg-gray-50 text-gray-800 pt-24 px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="font-sans bg-gray-50 text-gray-800 pt-24">
+      <div className="max-w-7xl mx-auto mb-8">
         <h1 className="text-4xl font-bold text-center mb-10">Terms of Use</h1>
 
         <div className="space-y-8">
@@ -208,6 +208,13 @@ const TermsOfUse = () => {
           </section>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-[#00378b] text-white py-6">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p>&copy; {new Date().getFullYear()} Helm Textile Mills. All Rights Reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
