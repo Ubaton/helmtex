@@ -72,7 +72,7 @@ const ContactPage = () => {
         });
       } else {
         throw new Error(
-          data && data.error ? data.error : "Failed to send message"
+          data?.error ? data.error : "Failed to send message"
         );
       }
     } catch (error) {

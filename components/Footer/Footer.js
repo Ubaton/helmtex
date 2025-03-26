@@ -100,30 +100,30 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="/privacy-policy" legacyBehavior>
-                <a className="hover:text-blue-500 hover:underline">
+                <p className="hover:text-blue-500 hover:underline">
                   Privacy Policy
-                </a>
+                </p>
               </Link>
             </li>
             <li>
               <Link href="/terms-services" legacyBehavior>
-                <a className="hover:text-blue-500 hover:underline">
+                <p className="hover:text-blue-500 hover:underline">
                   Terms & Services
-                </a>
+                </p>
               </Link>
             </li>
             <li>
               <Link href="/terms-of-use" legacyBehavior>
-                <a className="hover:text-blue-500 hover:underline">
+                <p className="hover:text-blue-500 hover:underline">
                   Terms of Use
-                </a>
+                </p>
               </Link>
             </li>
             <li>
               <Link href="/refund-policy" legacyBehavior>
-                <a className="hover:text-blue-500 hover:underline">
+                <p className="hover:text-blue-500 hover:underline">
                   Refund Policy
-                </a>
+                </p>
               </Link>
             </li>
           </ul>

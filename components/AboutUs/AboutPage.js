@@ -6,6 +6,7 @@ import Image from "next/image";
 import backgroundImage from "../../public/assets/background.png";
 import displayImage from "../../public/assets/img2.png";
 import displayImage2 from "../../public/assets/img7.png";
+import { useRouter } from "next/navigation";
 
 const productNames = [
   "Cotton Twill Fabric",
@@ -27,9 +28,14 @@ const productNames = [
 
 
 const AboutPage = () => {
+  const router = useRouter
   const [isPaused, setIsPaused] = useState(false);
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
+
+  const handleContact = () => {
+    router.push("/contact")
+  }
 
   return (
     <div className="font-sans">
@@ -171,6 +177,7 @@ const AboutPage = () => {
           >
             {productNames.concat(productNames).map((name, index) => (
               <div
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                 key={index}
                 className="flex items-center justify-center px-8 whitespace-nowrap text-gray-700 text-lg font-medium hover:text-blue-600 transition duration-300"
               >
@@ -185,6 +192,7 @@ const AboutPage = () => {
           >
             {productNames.concat(productNames).map((name, index) => (
               <div
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                 key={index}
                 className="flex items-center justify-center px-8 whitespace-nowrap text-gray-700 text-lg font-medium hover:text-blue-600 transition duration-300"
               >
@@ -248,7 +256,7 @@ const AboutPage = () => {
           </h3>
           <Button
             className="bg-yellow-500 hover:bg-yellow-300 text-gray-800 font-bold mt-4"
-            onClick={() => (window.location = "/contacts")}
+            onClick={handleContact}
           >
             Contact Us
           </Button>
