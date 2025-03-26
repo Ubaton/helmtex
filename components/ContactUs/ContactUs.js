@@ -7,9 +7,9 @@ import {
   Instagram,
   Mail,
   MapPin,
-  MessageCircleMore,
   Phone,
 } from "lucide-react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
@@ -128,21 +128,21 @@ const ContactPage = () => {
               aria-label="Facebook"
               className="hover:text-blue-500"
             >
-              <Facebook />
+              <FaFacebook size={26}/>
             </a>
             <a
-              href="https://wa.me/+27824520560"
+              href="https://wa.me/+27739660936"
               aria-label="Whatsapp"
               className="hover:text-blue-500"
             >
-              <MessageCircleMore />
+              <FaWhatsapp size={26}/>
             </a>
             <a
               href="https://www.instagram.com/helm_textiles/"
               aria-label="Instagram"
               className="hover:text-blue-500"
             >
-              <Instagram />
+              <FaInstagram size={26}/>
             </a>
           </div>
         </div>
@@ -235,7 +235,7 @@ const ContactPage = () => {
                 className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows="4"
                 required
-              ></Textarea>
+              />
             </div>
             <Button
               type="submit"
