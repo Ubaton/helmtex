@@ -1,7 +1,7 @@
 import ContactUs from "../../components/ContactUs/ContactUs";
 import React from "react";
 
-const page = () => {
+export default function ContactPage() {
   return (
     <div className="pt-20 p-2">
       <ContactUs />
@@ -9,4 +9,4 @@ const page = () => {
   );
 };
 
-export default page;
+
