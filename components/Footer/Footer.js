@@ -118,9 +118,9 @@ const Footer = () => {
 
             <ul className="space-y-2 text-sm">
               {[
-                { name: "Privacy Policy", href: "/privacy-policy" },
-                { name: "Terms of Service", href: "/terms-services" },
-                { name: "Refund Policy", href: "/refund-policy" },
+                { name: "Privacy Policy", href: "/privacy" },
+                { name: "Terms of Service", href: "/terms" },
+                { name: "Refund Policy", href: "/refund" },
               ].map((policy) => (
                 <li key={policy.name}>
                   <Link
