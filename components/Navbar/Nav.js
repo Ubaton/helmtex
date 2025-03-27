@@ -5,8 +5,10 @@ import HelmLogo from "../../public/images/helm.png";
 import { AlignJustify, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Nav = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const Links = [
@@ -33,7 +35,7 @@ const Nav = () => {
               className="w-24"
               priority={true}
               quality={100}
-              onClick={() => (window.location = "/")}
+              onClick={() => router.back("/")}
             />
           </div>
           <Button
