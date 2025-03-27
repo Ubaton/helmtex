@@ -26,16 +26,15 @@ const productNames = [
   // ... add more names!
 ];
 
-
 const AboutPage = () => {
-  const router = useRouter
+  const router = useRouter();
   const [isPaused, setIsPaused] = useState(false);
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
   const handleContact = () => {
-    router.push("/contact")
-  }
+    router.push("/contacts");
+  };
 
   return (
     <div className="font-sans">
@@ -200,7 +199,7 @@ const AboutPage = () => {
               </div>
             ))}
           </div>
-        </div>      
+        </div>
       </section>
 
       <section className="bg-gray-100 py-12">
@@ -255,7 +254,7 @@ const AboutPage = () => {
             Ready to Turn Your Designs into Reality?
           </h3>
           <Button
-            className="bg-yellow-500 hover:bg-yellow-300 text-gray-800 font-bold mt-4"
+            className="bg-yellow-500 hover:bg-yellow-300 text-gray-800 font-bold mt-4 cursor-pointer"
             onClick={handleContact}
           >
             Contact Us
