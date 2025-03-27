@@ -4,6 +4,7 @@ import Image from "next/image";
 import HelmLogo from "../../public/images/helm.png";
 import { AlignJustify, X } from "lucide-react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,13 +51,13 @@ const Nav = () => {
           {Links.map((link, i) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <li key={i} className="md:ml-8 text-lg md:my-0 my-4">
-              <a
+              <Link
                 href={link.link}
                 className="text-gray-800 hover:text-blue-700 transition duration-300"
                 onClick={() => setIsOpen(false)} // Close menu on click
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
