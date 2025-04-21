@@ -12,11 +12,7 @@ const WelcomePage = () => {
 
   // Images for the slider
   const images = [
-    "/assets/background4.png",
-    "/assets/background5.png",
-    "/assets/background3.png",
-    "/assets/background2.png",
-    "/assets/background.png",
+    "/assets/homebackground.png",
   ];
 
   // Manual navigation functions
@@ -208,7 +204,7 @@ const WelcomePage = () => {
       </div>
 
       {/* Slider Arrows */}
-      <Button
+      {/* <Button
         onClick={goToPrevSlide}
         className={`absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white px-2 rounded-full transition-all ${
           isAnimating ? "opacity-50 cursor-not-allowed" : ""
@@ -227,7 +223,7 @@ const WelcomePage = () => {
         disabled={isAnimating}
       >
         <ChevronRight className="h-6 w-6" />
-      </Button>
+      </Button> */}
 
       {/* Scroll-to-Top Button with Tailwind Animations */}
       <div
