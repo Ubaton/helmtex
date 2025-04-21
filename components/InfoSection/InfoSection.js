@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import img3 from "../../public/assets/img3.png";
+import image from "../../public/assets/home1.jpg";
 
 const InfoSection = () => {
   return (
@@ -47,7 +47,7 @@ const InfoSection = () => {
       {/* Image Section */}
       <div className="md:w-1/2 w-full relative aspect-square">
         <Image
-          src={img3}
+          src={image}
           alt="background"
           fill
           priority={true}
