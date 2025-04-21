@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import backgroundImage from "../../public/assets/background.png";
+import backgroundImage from "../../public/assets/about.jpg";
 import displayImage from "../../public/assets/img2.png";
 import displayImage2 from "../../public/assets/img7.png";
 import { useRouter } from "next/navigation";
