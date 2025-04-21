@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import img from "../../public/assets/img9.png";
+import image from "../../public/assets/home2.jpg";
 
 const Specialties = () => {
   return (
@@ -8,7 +8,7 @@ const Specialties = () => {
       {/* Image Section */}
       <div className="md:w-1/2 w-full relative aspect-square">
         <Image
-          src={img}
+          src={image}
           alt="background"
           fill
           priority
