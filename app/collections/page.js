@@ -89,6 +89,25 @@ const Collection = () => {
           {title}
         </h2>
       </div>
+
+      {/* Centered Div with warning message*/}
+      <div className="flex flex-col items-center justify-center text-center border border-red-600 border-dashed rounded-2xl p-2 mb-8">
+        <h2 className="font-bold mb-2">
+          Product Disclaimer
+        </h2>
+        <p className="mb-2">
+          Please note that while we strive to ensure our product images are as accurate as possible, 
+          the colors and textures of fabrics shown on screen may vary slightly due to lighting, screen calibration, 
+          and photography limitations. Photographic representations may not perfectly reflect the true appearance of the fabric. 
+        </p>
+        <p className="mb-2">
+          We strongly recommend requesting a physical fabric sample before placing an order to ensure satisfaction with color, texture, and suitability for your intended use.
+        </p>
+        <p>
+          Helm Textiles will not be responsible for discrepancies between on-screen images and actual fabric products when a sample has not been requested.
+        </p>
+      </div>
+
       {matchedSubset ? (
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 w-full">
