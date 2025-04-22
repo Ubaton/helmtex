@@ -15,7 +15,7 @@ const Nav = () => {
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
     { name: "Products", link: "/products" },
-    { name: "Blog", link: "/blog" },
+    { name: "Finishes", link: "/finishes" },
     { name: "Gallery", link: "/gallery" },
     { name: "Contact Us", link: "/contacts" },
   ];
@@ -35,7 +35,7 @@ const Nav = () => {
               className="w-24"
               priority={true}
               quality={100}
-              onClick={() => router.back("/")}
+              onClick={() => router.push("/")}
             />
           </div>
           <Button
