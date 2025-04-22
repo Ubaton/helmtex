@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import subset from "../../lib/subset";
-import { ArrowLeft, X } from "lucide-react";
+import { ArrowLeft, ChevronUp, X } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import {
   Dialog,
@@ -54,6 +54,41 @@ const Collection = () => {
     setIsDialogOpen(true);
   };
 
+  const scrollToTop = () => {
+    // Get the current scroll position
+    const currentPosition = window.pageYOffset;
+
+    // If browser supports smooth scrolling, use it
+    if ("scrollBehavior" in document.documentElement.style) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      // Fallback for browsers that don't support smooth scrolling
+      // Implement custom smooth scrolling with JavaScript
+      const duration = 500; // ms
+      const startTime = performance.now();
+
+      const animateScroll = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+
+        // Easing function for a smoother feel (ease-out)
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+        window.scrollTo(0, currentPosition * (1 - easeProgress));
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    }
+  };
+
+  
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-12 xl:pt-24 xl:px-16 xl:pb-16 w-full pt-24">
       <div className="relative mb-4 sm:mb-6 md:mb-8">
@@ -93,18 +128,11 @@ const Collection = () => {
       {/* Centered Div with warning message*/}
       <div className="flex flex-col items-center justify-center text-center border border-red-600 border-dashed rounded-2xl p-2 mb-8">
         <h2 className="font-bold mb-2">
-          Product Disclaimer
+          Disclaimer
         </h2>
         <p className="mb-2">
-          Please note that while we strive to ensure our product images are as accurate as possible, 
-          the colors and textures of fabrics shown on screen may vary slightly due to lighting, screen calibration, 
-          and photography limitations. Photographic representations may not perfectly reflect the true appearance of the fabric. 
-        </p>
-        <p className="mb-2">
-          We strongly recommend requesting a physical fabric sample before placing an order to ensure satisfaction with color, texture, and suitability for your intended use.
-        </p>
-        <p>
-          Helm Textiles will not be responsible for discrepancies between on-screen images and actual fabric products when a sample has not been requested.
+          Digital fabric images may vary in color and texture from the actual material. 
+          We advise requesting a fabric sample prior to placing your order for accurate evaluation. 
         </p>
       </div>
 
@@ -194,7 +222,20 @@ const Collection = () => {
           </div>
         </DialogContent>
       </Dialog>
-    </div>
+
+      {/* Scroll-to-Top Button with Tailwind Animations */}
+      <div
+        className="fixed bottom-8 right-8 z-50 transition-all duration-500 ease-in-out transform"
+      >
+        <Button
+          onClick={scrollToTop}
+          className="h-10 w-10 rounded-full bg-blue-500 shadow-lg hover:bg-blue-600 transition-all duration-300 hover:shadow-xl group"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="animate-bounce-subtle transform transition-transform duration-300 group-hover:-translate-y-1" />
+        </Button>
+      </div>
+    </div>    
   );
 };
 
