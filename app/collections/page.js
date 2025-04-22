@@ -57,6 +57,7 @@ const Collection = () => {
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-12 xl:pt-24 xl:px-16 xl:pb-16 w-full pt-24">
       <div className="relative mb-4 sm:mb-6 md:mb-8">
+        {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <div
           className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-72 cursor-pointer"
           onClick={() =>
@@ -95,6 +96,7 @@ const Collection = () => {
               ([key, value]) => (
                 <div key={key} className="p-3 sm:p-4 border rounded-xl w-full">
                   {value.image && (
+                    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
                     <div
                       className="relative w-full h-48 sm:h-56 md:h-64 cursor-pointer"
                       onClick={() =>
@@ -118,7 +120,15 @@ const Collection = () => {
                   )}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-3 sm:pt-4 gap-2">
                     <p className="text-base sm:text-lg font-semibold line-clamp-2">
+                      Design
+                    </p>
+                    <h3 className="text-base sm:text-lg text-blue-500 whitespace-nowrap">
                       {value.content}
+                    </h3>
+                  </div>
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-3 sm:pt-4 gap-2">
+                    <p className="text-base sm:text-lg font-semibold line-clamp-2">
+                      Design Code
                     </p>
                     <h3 className="text-base sm:text-lg text-blue-500 whitespace-nowrap">
                       {value.title}
