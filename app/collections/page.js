@@ -75,7 +75,7 @@ const Collection = () => {
         const progress = Math.min(elapsedTime / duration, 1);
 
         // Easing function for a smoother feel (ease-out)
-        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const easeProgress = 1 - (1 - progress) ** 3;
 
         window.scrollTo(0, currentPosition * (1 - easeProgress));
 
