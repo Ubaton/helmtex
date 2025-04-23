@@ -106,7 +106,16 @@ const ContactPage = () => {
                 className="mb-2 flex gap-8 hover:text-blue-500"
               >
                 <Mail />
-                info@helmtex.co.za
+                info@helmtex.co.za / 
+              </a>
+            </div>
+            <div className="flex items-center">
+              <a
+                href="mailto:info@helmtex.co.za?subject=Inquiry%20from%20Website"
+                className="mb-2 flex gap-8 hover:text-blue-500"
+              >
+                <Mail />
+                sales@helmtex.co.za
               </a>
             </div>
             <div className="flex items-center">
