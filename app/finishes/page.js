@@ -3,7 +3,7 @@ import EasyClean from "../../components/Finishes/EasyClean";
 
 const Finishes = () => {
   return (
-    <div className="text-center pt-24 text-gray-600 h-screen flex flex-col justify-center items-center">
+    <div className="text-center text-gray-600 flex flex-col justify-center items-center">
       <EasyClean/>
     </div>
   );
