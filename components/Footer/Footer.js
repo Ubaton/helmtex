@@ -41,7 +41,7 @@ const Footer = () => {
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
               { name: "Products", href: "/products" },
-              { name: "Blog", href: "/blog" },
+              { name: "Finishes", href: "/finishes" },
               { name: "Contact", href: "/contacts" },
             ].map((link) => (
               <li key={link.name}>
@@ -78,7 +78,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="flex items-start space-x-3">
-              <MapPin className="text-blue-300 mt-1" size={20} />
+              <MapPin className="text-blue-300" size={20} />
               <address className="not-italic text-sm">
                 33 Fennell Street, New Centre, Johannesburg, 2001, South Africa
               </address>
@@ -120,7 +120,7 @@ const Footer = () => {
               {[
                 { name: "Privacy Policy", href: "/privacy" },
                 { name: "Terms of Service", href: "/terms" },
-                { name: "Refund Policy", href: "/refund" },
+                // { name: "Refund Policy", href: "/refund" },
               ].map((policy) => (
                 <li key={policy.name}>
                   <Link
