@@ -3,7 +3,7 @@ import React from 'react'
 const EasyClean = () => {
   return (
     <div className="h-screen p-28 text-gray-800">
-      <h1 className="text-3xl font-bold mb-4 text-blue-700">EASYCLEAN® by TEXTIFIN</h1>
+      <h1 className="text-3xl font-bold mb-4 text-blue-700">EASYCLEAN<sup>®</sup></h1>
       <p className="mb-6">
       EASY CLEAN is our water repellent finish, your trusted solution for long-lasting,
       easy-to-maintain fabric care.
