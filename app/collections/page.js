@@ -29,8 +29,9 @@ const Collection = () => {
   useEffect(() => {
     const title = searchParams.get("title");
     const imageUrl = searchParams.get("imageUrl");
-    const id = window.location.pathname.split("/").pop();
-
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const id = pathSegments[pathSegments.length - 1];
+    
     try {
       if (title && id && imageUrl) {
         setProductDetails({ id, title, imageUrl });
@@ -139,7 +140,7 @@ const Collection = () => {
       {matchedSubset ? (
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 w-full">
-            {Object.entries(matchedSubset[productDetails.title]).map(
+            {Object.entries(matchedSubset && Object.values(matchedSubset)[0] || {}).map(
               ([key, value]) => (
                 <div key={key} className="p-3 sm:p-4 border rounded-xl w-full">
                   {value.image && (
