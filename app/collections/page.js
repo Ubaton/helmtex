@@ -189,7 +189,7 @@ const Collection = () => {
         </div>
       ) : (
         <div className="flex justify-center items-center h-32">
-          <p className="text-gray-500">No matching subset found.</p>
+          <p className="text-gray-500">Product Coming Soon.</p>
         </div>
       )}
 
