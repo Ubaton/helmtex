@@ -8,7 +8,7 @@ function Products() {
   const products = [
     { id: 13, title: "@Work Range", imageUrl: "/assets/wallpaper/WorkDisplay.png" },
     // { id: 2, title: "Diamond Range", imageUrl: "/assets/wallpaper/DiamondDisplay.png" },
-    { id: 7, title: "Scape Range", imageUrl: "/assets/wallpaper/ScapeRange.jpg" },
+    { id: 7, title: "Scape Range", imageUrl: "/assets/wallpaper/ScapeRangeDisplay.png" },
     { id: 8, title: "Slub Plain", imageUrl: "/assets/wallpaper/SlubDisplay.png" },
     { id: 4, title: "Studio Explore", imageUrl: "/assets/wallpaper/StudioExploreDisplay.png" },
     { id: 9, title: "Studio Range", imageUrl: "/assets/wallpaper/StudioRangeDisplay.png" },
