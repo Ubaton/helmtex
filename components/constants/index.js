@@ -1,16 +1,15 @@
 import Image1 from "../../public/assets/wallpaper/WorkDisplay.png";
 import Image2 from "../../public/assets/wallpaper/DiamondDisplay.png";
-import Image3 from "../../public/assets/plains.jpg";
-import Image4 from "../../public/assets/outdoor.jpg";
+import Image3 from "../../public/assets/wallpaper/GreatPlainsDisplay.png";
+import Image4 from "../../public/assets/wallpaper/GreatOutdoorDisplay.png";
 import Image5 from "../../public/assets/wallpaper/SlubDisplay.png";
 import Image6 from "../../public/assets/wallpaper/WestcliffDisplay.png";
 import Image7 from "../../public/assets/wallpaper/ValleyDisplay.png";
-import Image8 from "../../public/assets/tailor.jpg";
-import Image9 from "../../public/assets/explore.jpg";
-import Image10 from "../../public/assets/scape.jpg";
-import Image11 from "../../public/assets/studio.jpg";
-import Image12 from "../../public/assets/domestic.jpg";
-import Image13 from "../../public/assets/customise.jpg";
+import Image8 from "../../public/assets/wallpaper/TailorRangeDisplay.png";
+import Image9 from "../../public/assets/wallpaper/StudioExploreDisplay.png";
+import Image10 from "../../public/assets/wallpaper/ScapeRangeDisplay.png";
+import Image11 from "../../public/assets/wallpaper/StudioRangeDisplay.png";
+import Image13 from "../../public/assets/Customise.jpg";
 
 export const ServiceData = [
   {
@@ -79,12 +78,12 @@ export const ServiceData = [
       "Where creativity meets craftsmanship. The Studio Range features curated fabrics that blend artistic expression with practical design—ideal for interior spaces that need a creative edge.",
     backgroundImage: Image11,
   },
-  {
-    title: "Domestic Range",
-    content:
-      "Comfortable, practical, and made for everyday living. The Domestic Range offers versatile fabrics designed for home use—easy to care for and built to last, making them ideal for family-friendly spaces.",
-    backgroundImage: Image12,
-  },
+  // {
+  //   title: "Domestic Range",
+  //   content:
+  //     "Comfortable, practical, and made for everyday living. The Domestic Range offers versatile fabrics designed for home use—easy to care for and built to last, making them ideal for family-friendly spaces.",
+  //   backgroundImage: Image12,
+  // },
   {
     title: "Create Your Own",
     content:
