@@ -111,7 +111,7 @@ const EasyClean = () => {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-lg font-medium text-gray-700">Important Do's and Don'ts</h3>
+            <h3 className="text-lg font-medium text-gray-700">Important Do&apos;s and Don&apos;ts</h3>
             <ul className="space-y-1 list-disc list-inside text-gray-700 text-base">
               <li>Do NOT use ammonia, bleach, or solvent-based cleaners</li>
               <li>Do NOT scrub or brush the fabric</li>
