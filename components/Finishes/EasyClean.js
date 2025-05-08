@@ -7,7 +7,7 @@ const EasyClean = () => {
     <div className="px-4 py-12 max-w-7xl mx-auto space-y-20 pt-24">
       {/* Header Section */}
       <section className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-gray-800">EASYCLEAN®</h1>
+        <h1 className="text-4xl font-bold text-gray-800">EASYCLEAN<sup>®</sup></h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           EASY CLEAN is our water repellent finish, your trusted solution for long-lasting, easy-to-maintain fabric care.
         </p>
@@ -29,7 +29,7 @@ const EasyClean = () => {
           </p>
         </div>
         <Image
-          src="/assets/wallpaper/DiamondDisplay.png"
+          src="/assets/finishes/easyclean.png"
           alt="EasyClean Features"
           width={100}
           height={100}
@@ -46,7 +46,7 @@ const EasyClean = () => {
           </p>
         </div>
         <Image
-          src="/assets/wallpaper/DiamondDisplay.png"
+          src="/assets/finishes/easyclean1.png"
           alt="Performance"
           width={100}
           height={100}
