@@ -15,24 +15,25 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Helm Textile Mills | Textile Company",
+  title: "Helm Textile Mills",
   description:
     "Helm Textile Mills is a leading textile company that specializes in producing high-quality fabrics for various industries. From upholstery to automotive, we provide a wide range of fabrics that are durable, stylish, and sustainable.",
   keywords: ["Helm Textile Mills", "Textile Company", "Fabric Manufacturer"],
   openGraph: {
-    title: "Helm Textile Mills | Textile Company",
+    title: "Helm Textile Mills",
     description:
       "Helm Textile Mills is a leading textile company that specializes in producing high-quality fabrics for various industries. From upholstery to automotive, we provide a wide range of fabrics that are durable, stylish, and sustainable.",
     type: "website",
     url: "https://helmtex.co.za",
     siteName: "Helm Textile Mills",
-  },
-  twitter: {
-    title: "Helm Textile Mills | Textile Company",
-    description:
-      "Helm Textile Mills is a leading textile company that specializes in producing high-quality fabrics for various industries. From upholstery to automotive, we provide a wide range of fabrics that are durable, stylish, and sustainable.",
-    card: "summary_large_image",
-    site: "@HelmTextileMills",
+    images: [
+      {
+        url: "https://helmtex.co.za/images/helm.png",
+        width: 1200,
+        height: 630,
+        alt: "Helm Textile Mills - High-Quality Fabrics",
+      }
+    ]
   },
   icons: {
     icon: "/favicon.ico",
@@ -40,20 +41,14 @@ export const metadata = {
   alternates: {
     canonical: "https://helmtex.co.za",
   },
-  alternates: {
-    canonical: "https://helmtex.co.za",
-  },
-  alternates: {
-    canonical: "https://helmtex.co.za",
-  },
-  alternates: {
-    canonical: "https://helmtex.co.za",
-  },
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Helm Textile Mills" />
       <body
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
