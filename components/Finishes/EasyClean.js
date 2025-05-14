@@ -46,7 +46,7 @@ const EasyClean = () => {
           </p>
         </div>
         <Image
-          src="/assets/finishes/easyclean1.png"
+          src="/assets/finishes/WaterRepellentFabric.png"
           alt="Performance"
           width={100}
           height={100}
@@ -64,32 +64,16 @@ const EasyClean = () => {
             <li>Compliant with SABS, ISO, and British Standards</li>
           </ul>
         </div>
-        <Image
-          src="/assets/wallpaper/DiamondDisplay.png"
-          alt="Engineered to Last"
-          width={100}
-          height={100}
-          className="w-full md:w-1/2 rounded-xl shadow"
-        />
-      </section>
 
       {/* Durability Section */}
-      <section className="flex flex-col md:flex-row-reverse items-center gap-10">
       <div className="w-full md:w-1/2 space-y-4">
           <h2 className="text-2xl font-semibold text-gray-800">Long-Term Durability</h2>
           <p className="text-gray-600 text-base">
             Every fabric treated with EASYCLEAN® comes with a limited 5-Year Warranty (Terms & Conditions apply). With proper care, your fabric will maintain its fresh appearance for years to come.
           </p>
         </div>
-        <Image
-          src="/assets/wallpaper/DiamondDisplay.png"
-          alt="Long-Term Durability"
-          width={100}
-          height={100}
-          className="w-full md:w-1/2 rounded-xl shadow"
-        />
       </section>
-
+      
       {/* Cleaning Section */}
       <section className="flex flex-col md:flex-row items-start gap-10">
       <div className="w-full md:w-1/2 space-y-6">
@@ -124,7 +108,7 @@ const EasyClean = () => {
           </p>
         </div>
         <Image
-          src="/assets/wallpaper/DiamondDisplay.png"
+          src="/assets/finishes/easyclean2.png"
           alt="Cleaning Guidelines"
           width={100}
           height={100}
