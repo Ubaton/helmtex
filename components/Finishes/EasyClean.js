@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const EasyClean = () => {
   return (
-    <div className="px-4 py-12 max-w-7xl mx-auto space-y-20 pt-24">
+    <div className="px-4 max-w-7xl mx-auto space-y-20 pt-20 py-10">
       {/* Header Section */}
       <section className="text-center space-y-4">
         <h1 className="text-4xl font-bold text-gray-800">EASYCLEAN<sup>®</sup></h1>
@@ -114,14 +114,6 @@ const EasyClean = () => {
           height={100}
           className="w-full md:w-1/2 rounded-xl shadow"
         />
-      </section>
-
-      {/* Contact */}
-      <section className="text-center border-t border-gray-200 pt-10">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">Need More Help?</h2>
-        <p className="text-gray-600">
-          Contact us at: <a href="mailto:sales@helmtex.co.za" className="text-blue-600 underline">sales@helmtex.co.za</a>
-        </p>
       </section>
     </div>
   );
