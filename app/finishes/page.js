@@ -1,13 +1,17 @@
 import React from "react";
 import EasyClean from "../../components/Finishes/EasyClean";
-import Latex from "../../components/Finishes/Latex"
+import FlameRetardant from "../../components/Finishes/FlameRetardant"
+import AntibacterialFinish from "../../components/Finishes/AntiBacterial";
 
 const Finishes = () => {
   return (
     <div className="text-center text-gray-600 flex flex-col justify-center items-center py-10">
       <EasyClean/>
       <div className="text-center border-t border-gray-300 pt-10">
-        <Latex/>
+        <AntibacterialFinish/>
+      </div>
+      <div className="text-center border-t border-gray-300 pt-10">
+        <FlameRetardant/>
       </div>
 
       {/* Contact */}
