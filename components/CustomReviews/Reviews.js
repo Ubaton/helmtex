@@ -42,7 +42,7 @@ const Reviews = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 sm:p-8 text-white transition-transform hover:scale-105 duration-300"
+              className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 sm:p-8 text-white"
             >
               <p className="italic text-sm sm:text-base mb-6 leading-relaxed">
                 &ldquo;{review.text}&rdquo;
