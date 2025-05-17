@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import backgroundImage from "../../public/assets/about.jpg";
 import displayImage from "../../public/assets/loom.jpg";
 import displayImage2 from "../../public/assets/img7.png";
 import { useRouter } from "next/navigation";
-import { BadgeCheck, Layers, Globe2 } from "lucide-react";
+import { BadgeCheck, Layers } from "lucide-react";
+import Counter from "../../components/ui/Counter";
+
 
 const productNames = [
   "Cotton Twill Fabric",
@@ -33,6 +35,7 @@ const AboutPage = () => {
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
   const handleContact = () => router.push("/contacts");
+
 
   return (
     <div className="font-sans">
