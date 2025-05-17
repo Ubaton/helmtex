@@ -86,75 +86,82 @@ const ContactPage = () => {
   return (
     <div className="flex flex-col items-center justify-between pt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
-        {/* Contact Information */}
-        <div className="bg-[#00378b] text-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
-          <p className="mb-6">Say something to start a live chat!</p>
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <a
-                href="tel:+27114935495"
-                className="mb-2 flex gap-8 hover:text-blue-500"
-              >
-                <Phone />
+        <div className="bg-[#00378b] text-white p-8 rounded-lg shadow-lg space-y-6">
+          <h2 className="text-2xl font-semibold">Contact Information</h2>
+          <p className="text-gray-200">We’re here to help. Start a conversation today!</p>
+
+          <div className="space-y-4 text-sm sm:text-base">
+            <div className="flex items-center gap-4">
+              <Phone size={20} className="text-blue-200" />
+              <a href="tel:+27114935495" className="hover:text-blue-300 transition">
                 +27 11 493 5495
               </a>
             </div>
-            <div className="flex items-center">
-              <a
-                href="mailto:info@helmtex.co.za?subject=Inquiry%20from%20Website"
-                className="mb-2 flex gap-8 hover:text-blue-500"
-              >
-                <Mail />
-                info@helmtex.co.za / 
-              </a>
+            <div className="flex items-center gap-4">
+              <Mail size={20} className="text-blue-200" />
+              <div className="flex flex-col">
+                <a
+                  href="mailto:info@helmtex.co.za"
+                  className="hover:text-blue-300 transition"
+                >
+                  info@helmtex.co.za
+                </a>
+                <a
+                  href="mailto:sales@helmtex.co.za"
+                  className="hover:text-blue-300 transition"
+                >
+                  sales@helmtex.co.za
+                </a>
+              </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-start gap-4">
+              <MapPin size={20} className="text-blue-200" />
               <a
-                href="mailto:info@helmtex.co.za?subject=Inquiry%20from%20Website"
-                className="mb-2 flex gap-8 hover:text-blue-500"
-              >
-                <Mail />
-                sales@helmtex.co.za
-              </a>
-            </div>
-            <div className="flex items-center">
-              <Link
                 href="https://maps.app.goo.gl/ujC1gntD3jMfKmbT9"
-                className="flex gap-8 hover:text-blue-500"
+                className="hover:text-blue-300 transition leading-snug"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <MapPin />
-                <h4 className="flex-1 items-center justify-center">
-                  33 Fennell Street, New Centre, Johannesburg, 2001
-                </h4>
-              </Link>
+                33 Fennell Street, New Centre, Johannesburg, 2001
+              </a>
             </div>
           </div>
-          <div className="flex mt-6 space-x-6 pt-36">
-            {/* Social Icons */}
+
+        {/* WhatsApp CTA */}
+        <div className="pt-6">
+          <h4 className="text-sm uppercase text-gray-200 mb-3 tracking-wide">Chat With Us</h4>
+          <a
+            href="https://wa.me/+27739660936"
+            target="_blank"
+            className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-full transition"
+          >
+            <FaWhatsapp size={18} />    
+          </a>
+        </div>
+
+        {/* Social Icons */}
+        <div className="pt-6">
+          <h4 className="text-sm uppercase text-gray-200 mb-3 tracking-wide">Follow Us</h4>
+          <div className="flex space-x-4">
             <a
               href="https://web.facebook.com/p/Helm-Textile-Mills-61559102703086/?_rdc=1&_rdr"
+              target="_blank"
               aria-label="Facebook"
-              className="hover:text-blue-500"
+              className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition"
             >
-              <FaFacebook size={26}/>
-            </a>
-            <a
-              href="https://wa.me/+27739660936"
-              aria-label="Whatsapp"
-              className="hover:text-blue-500"
-            >
-              <FaWhatsapp size={26}/>
+              <FaFacebook size={20} />
             </a>
             <a
               href="https://www.instagram.com/helm_textiles/"
+              target="_blank"
               aria-label="Instagram"
-              className="hover:text-blue-500"
+              className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition"
             >
-              <FaInstagram size={26}/>
+              <FaInstagram size={20} />
             </a>
           </div>
         </div>
+      </div>
 
         {/* Contact Form */}
         <div className="bg-white border border-[#00378b] p-8 rounded-lg shadow-lg">
@@ -196,43 +203,28 @@ const ContactPage = () => {
               />
             </div>
             <div className="mb-4">
-              <Label className="block text-gray-700 mb-2">
-                Select Subject:
-              </Label>
-              <div className="flex space-x-4">
-                <Label>
-                  <input
-                    type="radio"
-                    name="subject"
-                    value="General Inquiry"
-                    checked={formData.subject === "General Inquiry"}
-                    onChange={handleRadioChange}
-                    className="mr-2"
-                  />
-                  General Inquiry
-                </Label>
-                <Label>
-                  <input
-                    type="radio"
-                    name="subject"
-                    value="Feedback"
-                    checked={formData.subject === "Feedback"}
-                    onChange={handleRadioChange}
-                    className="mr-2"
-                  />
-                  Feedback
-                </Label>
-                <Label>
-                  <input
-                    type="radio"
-                    name="subject"
-                    value="Support"
-                    checked={formData.subject === "Support"}
-                    onChange={handleRadioChange}
-                    className="mr-2"
-                  />
-                  Support
-                </Label>
+              <Label className="block text-gray-700 mb-2">Subject</Label>
+              <div className="flex flex-wrap gap-4">
+                {['General Inquiry', 'Feedback', 'Support'].map((option) => (
+                  <Label
+                    key={option}
+                    className={`inline-flex items-center gap-2 px-4 py-2 border rounded-full cursor-pointer transition-colors duration-200 ${
+                      formData.subject === option
+                        ? 'bg-[#00378b] text-white border-[#00378b]'
+                        : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="subject"
+                      value={option}
+                      checked={formData.subject === option}
+                      onChange={handleRadioChange}
+                      className="sr-only"
+                    />
+                    {option}
+                  </Label>
+                ))}
               </div>
             </div>
             <div className="mb-6">
