@@ -19,9 +19,9 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <div className="relative flex items-center justify-center min-h-screen">
+    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
+      <div className="bg-black absolute inset-0">
         <Image
           src={backgroundImage}
           alt="Background"
@@ -30,24 +30,24 @@ const Reviews = () => {
           priority
           className="w-full h-full"
         />
-        <div className="absolute inset-0 bg-gray-800 bg-opacity-50" />
+        <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm" />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-4 sm:py-16 md:py-20 lg:py-24">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white md:mb-24">
+      <div className="container mx-auto px-4 py-4 sm:py-16 md:py-20 lg:py-24 z-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white mb-12">
           What Our Customers Say About Us!
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-[#00378b] shadow-lg p-6 sm:p-8 rounded-lg h-auto flex flex-col justify-between"
+              className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 sm:p-8 text-white transition-transform hover:scale-105 duration-300"
             >
-              <p className="italic text-gray-100 mb-4">
-                &quot;{review.text}&quot;
+              <p className="italic text-sm sm:text-base mb-6 leading-relaxed">
+                &ldquo;{review.text}&rdquo;
               </p>
-              <p className="text-right font-semibold text-gray-100 mt-4">
+              <p className="text-right font-semibold text-blue-200 text-sm sm:text-base">
                 {review.author}
               </p>
             </div>
