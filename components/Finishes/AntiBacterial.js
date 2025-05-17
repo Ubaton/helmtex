@@ -30,13 +30,6 @@ const AntibacterialFinish = () => {
         <IconTile icon={<School size={28} />} label="Schools & Institutions" />
       </div>
 
-      {/* Service Details
-      <h2 className="text-2xl font-semibold text-blue-600 mb-4">Service Details:</h2>
-      <ul className="list-disc pl-6 mb-10 text-lg">
-        <li><strong>Minimum Order:</strong> 400 metres of bulk up with other orders.</li>
-        <li><strong>Cost:</strong> Quoted based on fabric quality and specifications.</li>
-      </ul> */}
-
       {/* Closing Text */}
       <p className="text-xl font-medium mb-4">
         Protect your investment and your space. Add an Antibacterial Finish to your fabric order with Helm Textiles—cleaner, safer, smarter upholstery solutions.
@@ -49,19 +42,19 @@ const AntibacterialFinish = () => {
 };
 
 const Card = ({ icon, title, description }) => (
-  <div className="flex items-start space-x-4 p-4 border rounded-lg shadow-sm bg-white">
+  <div className="flex items-start space-x-4 p-4 border rounded-lg shadow-sm bg-white transition-transform transform hover:scale-105 hover:shadow-md duration-300">
     <div className="text-blue-600">{icon}</div>
     <div>
       <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-sm">{description}</p>
+      <p className="text-sm text-gray-700">{description}</p>
     </div>
   </div>
 );
 
 const IconTile = ({ icon, label }) => (
-  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center transition-transform hover:scale-110 duration-300">
     <div className="text-blue-600 mb-2">{icon}</div>
-    <div>{label}</div>
+    <div className="text-gray-700 font-medium text-sm">{label}</div>
   </div>
 );
 
