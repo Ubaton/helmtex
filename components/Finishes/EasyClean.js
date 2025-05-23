@@ -7,7 +7,7 @@ const EasyClean = () => {
     <div className="px-4 max-w-7xl mx-auto space-y-20 pt-20 py-10">
       {/* Header Section */}
       <section className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-gray-800">EASYCLEAN<sup>®</sup></h1>
+        <h1 className="text-4xl font-bold text-blue-600">EASYCLEAN<sup>®</sup></h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           EASY CLEAN is our water repellent finish, your trusted solution for long-lasting, easy-to-maintain fabric care.
         </p>
@@ -16,7 +16,7 @@ const EasyClean = () => {
       {/* Features Section */}
       <section className="flex flex-col md:flex-row items-center gap-10">
       <div className="w-full md:w-1/2 space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Key Features</h2>
+          <h2 className="text-2xl font-semibold text-blue-600">Key Features</h2>
           <ul className="space-y-1 list-disc list-inside text-gray-700 text-base">
             <li>Water Repellent</li>
             <li>Anti Dust Mite Protection</li>
@@ -40,7 +40,7 @@ const EasyClean = () => {
       {/* Performance Section */}
       <section className="flex flex-col md:flex-row-reverse items-center gap-10">
       <div className="w-full md:w-1/2 space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Performance You Can Rely On</h2>
+          <h2 className="text-2xl font-semibold text-blue-600">Performance You Can Rely On</h2>
           <p className="text-gray-600 text-base">
             Our premium soil and water-repellent fabrics are expertly treated with EASYCLEAN® TEXTIFIN, a high-performance protector designed for real-life messes—whether at home, in offices, hospitality venues, or entertainment spaces.
           </p>
@@ -57,7 +57,7 @@ const EasyClean = () => {
       {/* Engineered Section */}
       <section className="flex flex-col md:flex-row items-center gap-10">
       <div className="w-full md:w-1/2 space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Engineered to Last</h2>
+          <h2 className="text-2xl font-semibold text-blue-600">Engineered to Last</h2>
           <ul className="space-y-1 list-disc list-inside text-gray-700 text-base">
             <li>Strict quality control conditions for consistent performance</li>
             <li>In-house testing: abrasion resistance, strength, and color fastness</li>
@@ -67,7 +67,7 @@ const EasyClean = () => {
 
       {/* Durability Section */}
       <div className="w-full md:w-1/2 space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Long-Term Durability</h2>
+          <h2 className="text-2xl font-semibold text-blue-600">Long-Term Durability</h2>
           <p className="text-gray-600 text-base">
             Every fabric treated with EASYCLEAN® comes with a limited 5-Year Warranty (Terms & Conditions apply). With proper care, your fabric will maintain its fresh appearance for years to come.
           </p>
@@ -78,7 +78,7 @@ const EasyClean = () => {
       <section className="flex flex-col md:flex-row items-start gap-10">
       <div className="w-full md:w-1/2 space-y-6">
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-gray-800">Cleaning & Care Guidelines</h2>
+            <h2 className="text-2xl font-semibold text-blue-600">Cleaning & Care Guidelines</h2>
             <p className="text-gray-600 text-base">
               <strong>Quick Action Is Key:</strong> Most stains can be removed if treated immediately.
             </p>

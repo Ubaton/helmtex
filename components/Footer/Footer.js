@@ -141,6 +141,17 @@ const Footer = () => {
         <p className="text-sm text-gray-300">
           © {new Date().getFullYear()} Helm Textile Mills. All Rights Reserved.
         </p>
+        <p className="text-sm text-gray-300">
+          Designed by{" "}
+          <a
+            href="https://koketso-portfolio.netlify.app/"
+            className="text-blue-300 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Koketso Seshoka
+          </a>
+        </p>
       </div>
     </footer>
   );
