@@ -9,7 +9,7 @@ import Image8 from "../../public/assets/wallpaper/TailorRangeDisplay.png";
 import Image9 from "../../public/assets/wallpaper/StudioExploreDisplay.png";
 import Image10 from "../../public/assets/wallpaper/ScapeRangeDisplay.png";
 import Image11 from "../../public/assets/wallpaper/StudioRangeDisplay.png";
-import Image13 from "../../public/assets/Customise.jpg";
+import Image13 from "../../public/assets/customise.jpg";
 
 export const ServiceData = [
   {
