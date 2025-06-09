@@ -142,14 +142,14 @@ const Footer = () => {
           © {new Date().getFullYear()} Helm Textile Mills. All Rights Reserved.
         </p>
         <p className="text-sm text-gray-300">
-          Designed by{" "}
+          Made with <span className="text-lg text-red-600">❤</span> {" "}
           <a
-            href="https://koketso-portfolio.netlify.app/"
+            href="https://koketso-portfolio.vercel.app/"
             className="text-blue-300 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Koketso Seshoka
+            @Eliantte
           </a>
         </p>
       </div>
