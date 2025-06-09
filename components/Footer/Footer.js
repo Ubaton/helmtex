@@ -149,7 +149,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            @Eliantte
+            @eliantte
           </a>
         </p>
       </div>
