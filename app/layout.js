@@ -137,7 +137,10 @@ export const metadata = {
     "Tailored Solutions",
     "Bulk Fabric Suppliers",
     "Bedding Fabrics",
-    ""
+    "Textile Leading Industries",
+    "Waterproof Fabric Manufactures",
+    "Linen Fabrics",
+    "Eco Friendly Fabrics"
   ],
   openGraph: {
     title: "Helm Textile Mills",
