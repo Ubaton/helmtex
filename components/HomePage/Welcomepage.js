@@ -176,7 +176,7 @@ const WelcomePage = () => {
       </div>
 
       {/* Fixed Content - This stays on screen at all times */}
-      <div className="relative z-30 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-8">
+      <div className="relative z-30 flex flex-col items-center justify-center h-full text-center text-blue-600 px-4 sm:px-8">
         <h1 className="text-md sm:text-lg md:text-2xl font-light uppercase tracking-wider animate-fade-in-up">
           Welcome to
         </h1>
