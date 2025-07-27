@@ -4,7 +4,7 @@ import RichBlogPost from "../../../components/Blogs/RichBlogPost";
 
 // SEO Metadata
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return notFound();
 
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
 
 // ✅ Async function for correct `params` usage
 export default async function PostPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return notFound();
   return <RichBlogPost post={post} />;
