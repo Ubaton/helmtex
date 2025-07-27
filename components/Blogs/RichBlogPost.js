@@ -12,6 +12,8 @@ import {
   Facebook,
   Linkedin,
   Copy,
+  Globe,
+  Globe2,
 } from "lucide-react"
 import { Button } from "../ui/button"
 
@@ -42,11 +44,11 @@ export default function RichBlogPost({ post }) {
 
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
             <div className="max-w-4xl mx-auto">
-              <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-blue-600 rounded-full">
+              {/* <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-blue-600/50 rounded-full">
                   {post.category}
                 </span>
-              </div>
+              </div> */}
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
                 {post.title}
               </h1>
@@ -153,16 +155,16 @@ export default function RichBlogPost({ post }) {
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">{post.author.bio}</p>
               <div className="flex space-x-3">
-                {post.author.social?.twitter && (
-                  <a
-                    href={`https://twitter.com/${post.author.social.twitter.replace("@", "")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-blue-500"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                )}
+              {post.author.social?.portfolio && (
+                <a
+                  href={post.author.social.portfolio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-blue-500"
+                >
+                  <Globe2 className="w-5 h-5" /> {/* Optional: You can use any icon here */}
+                </a>
+              )}
                 {post.author.social?.linkedin && (
                   <a
                     href={`https://linkedin.com/in/${post.author.social.linkedin}`}
