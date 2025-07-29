@@ -20,7 +20,7 @@ export const metadata = {
   description:
     "Helm Textile Mills is a leading textile company that specializes in producing high-quality fabrics for various industries. From upholstery to automotive, we provide a wide range of fabrics that are durable, stylish, and sustainable.",
   keywords: [
-    "Helm Textile Mills", "South Africa textile Manufacturer,", "Upholstery Fabrics", "Automotive Fabrics", "Sustainable Textiles", "Fire-retardant Fabrics", "Anti-microbal Textiles", "Commercial Contract Fabrics", "Cusome Woven Fabrics", "Local Fabric Mill"
+    "Helm Textile Mills", "South Africa textile Manufacturer,", "Upholstery Fabrics", "Automotive Fabrics", "Sustainable Textiles", "Fire-retardant Fabrics", "Anti-microbal Textiles", "Commercial Contract Fabrics", "Custom Woven Fabrics", "Local Fabric Mill"
   ],
   openGraph: {
     title: "Helm Textile Mills",
