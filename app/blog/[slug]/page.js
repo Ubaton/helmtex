@@ -16,10 +16,10 @@ export async function generateMetadata({ params }) {
       "Helmtex",
       "Textile Manufacturer",
       "Fabric Supplier South Africa",
-      "Upholstery",
-      "Curtains",
-      "Bulk Fabric",
-      "Tender Fabric",
+      "Upholstery Fabrics",
+      "Curtains Fabrics",
+      "Bulk Fabric Supplier",
+      "Tender Fabric South Africa",
     ],
     openGraph: {
       title: post.title,
@@ -38,10 +38,24 @@ export async function generateMetadata({ params }) {
         ? [`https://www.helmtex.co.za${post.featuredImage}`]
         : [],
     },
+    other: {
+      "application/ld+json": JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        image: `https://www.helmtex.co.za${post.featuredImage}`,
+        datePublished: post.publishedAt,
+        author: {
+          "@type": "Person",
+          name: post.author.name,
+        },
+        description: post.excerpt,
+      }),
+    }
   };
 }
 
-// ✅ Async function for correct `params` usage
+// ✅ Async function for correct `params` usage (Blog Render)
 export default async function PostPage({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
