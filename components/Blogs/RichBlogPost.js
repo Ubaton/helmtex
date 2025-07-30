@@ -14,10 +14,13 @@ import {
   Copy,
   Globe,
   Globe2,
+  Github,
 } from "lucide-react"
 import { Button } from "../ui/button"
+import { FaGithub, FaGlobeAfrica } from "react-icons/fa";
 
 export default function RichBlogPost({ post }) {
+  
   return (
     <article className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Hero Section */}
@@ -99,7 +102,7 @@ export default function RichBlogPost({ post }) {
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
-            <Button variant="outline" size="sm" className="flex items-center space-x-1 bg-transparent">
+            {/* <Button variant="outline" size="sm" className="flex items-center space-x-1 bg-transparent">
               <Heart className="w-4 h-4" />
               <span>{post.likes}</span>
             </Button>
@@ -108,7 +111,7 @@ export default function RichBlogPost({ post }) {
               <span>{post.comments}</span>
             </Button>
             <Button variant="outline" size="sm"><Bookmark className="w-4 h-4" /></Button>
-            <Button variant="outline" size="sm"><Share2 className="w-4 h-4" /></Button>
+            <Button variant="outline" size="sm"><Share2 className="w-4 h-4" /></Button> */}
           </div>
         </div>
 
@@ -128,19 +131,18 @@ export default function RichBlogPost({ post }) {
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <Link
+              <p
                 key={tag}
-                href={`/blog/tags/${tag.toLowerCase()}`}
                 className="inline-block px-3 py-1 text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 #{tag}
-              </Link>
+              </p>
             ))}
           </div>
         </div>
 
         {/* Author Bio */}
-        <div className="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
+        <div className="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg">
           <div className="flex items-start space-x-4">
             <Image
               src={post.author.avatar || "/placeholder.svg"}
@@ -162,17 +164,17 @@ export default function RichBlogPost({ post }) {
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-blue-500"
                 >
-                  <Globe2 className="w-5 h-5" /> {/* Optional: You can use any icon here */}
+                  <FaGlobeAfrica className="w-5 h-5 text-gray-600 hover:text-blue-600" /> {/* Optional: You can use any icon here */}
                 </a>
               )}
-                {post.author.social?.linkedin && (
+                {post.author.social?.github && (
                   <a
-                    href={`https://linkedin.com/in/${post.author.social.linkedin}`}
+                    href={post.author.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-blue-600"
+                    className="text-gray-950 hover:text-blue-600"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <FaGithub className="w-5 h-5"/>
                   </a>
                 )}
               </div>
@@ -181,7 +183,7 @@ export default function RichBlogPost({ post }) {
         </div>
 
         {/* Share Options */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        {/* <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Share this article</h3>
           <div className="flex space-x-3">
             <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-transparent">
@@ -201,7 +203,7 @@ export default function RichBlogPost({ post }) {
               <span>Copy Link</span>
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </article>
   );
