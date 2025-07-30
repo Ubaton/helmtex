@@ -97,7 +97,7 @@ export default function Page({ params }) {
 
       {/* Optional SEO Structured Data */}
       <Script
-        id="my-inline-script"
+        id="product-quote-modal-script"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
