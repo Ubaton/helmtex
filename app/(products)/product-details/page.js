@@ -3,6 +3,8 @@ import { collections } from "../../../components/ProductCard/Collection/data";
 import { notFound } from "next/navigation";
 import Products from "../../../components/ProductCard/Products";
 import Image from "next/image";
+import Script from "next/script";
+
 
 
 // Dynamic SEO metadata
