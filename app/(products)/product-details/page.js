@@ -6,7 +6,6 @@ import Image from "next/image";
 import Script from "next/script";
 
 
-
 // Dynamic SEO metadata
 export async function generateMetadata({ params }) {
   const { collectionId, productId } = params;
@@ -98,6 +97,7 @@ export default function Page({ params }) {
 
       {/* Optional SEO Structured Data */}
       <Script
+        id="my-inline-script"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
