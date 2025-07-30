@@ -38,32 +38,34 @@ function Products() {
   return (
     <div className="container mx-auto px-4 py-6">
       <header className="mb-6 text-center">
-        <h1 className="text-3xl font-bold">Product Ranges</h1>
+        <h1 className="text-3xl font-bold">Explore Our Fabric Collections</h1>
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map((items, index) => {
           return (
             // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
             <div
+              role="button"
+              tabIndex={0}
               onClick={() => handleDetailsClick(items.id, items.title)}
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              key={index}
-              className="border rounded-xl p-4 cursor-pointer"
+              onKeyDown={(e) => e.key === "Enter" && handleDetailsClick(items.id, items.title)}
+              key={items.id}
+              className="border rounded-xl p-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Image
                 src={items.imageUrl}
-                alt={items.title}
+                alt={`Helmtex ${items.title} Fabric Collection`}
                 className="w-full h-48 object-cover mb-4 rounded-lg"
                 priority={true}
                 quality={100}
                 width={600}
                 height={600}
               />
-              <h2 className="font-bold text-md mb-2">{items.title}</h2>
+              <h2 className="text-lg font-semibold mb-2">{items.title}</h2>
               <div className="flex justify-end items-center">
                 <Button
                   className="bg-blue-500/80 hover:bg-blue-500 text-white rounded-xl"
-                  onClick={handleDetailsClick}
+                  onClick={() => handleDetailsClick(items.id, items.title)}
                 >
                   More Details
                 </Button>
