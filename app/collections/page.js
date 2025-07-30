@@ -11,6 +11,7 @@ import {
   DialogClose,
   DialogTitle,
 } from "../../components/ui/dialog";
+import { toast } from "sonner";
 
 const Collection = () => {
   const [productDetails, setProductDetails] = useState({
@@ -20,7 +21,13 @@ const Collection = () => {
   });
   const [matchedSubset, setMatchedSubset] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedFabric, setSelectedFabric] = useState(null);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [quoteName, setQuoteName] = useState("");
+  const [quoteEmail, setQuoteEmail] = useState("");
+  const [quoteQty, setQuoteQty] = useState("");
+  const [quoteNote, setQuoteNote] = useState("");
   const searchParams = useSearchParams();
   const imageUrl = searchParams.get("imageUrl");
   const title = searchParams.get("title");
@@ -127,15 +134,14 @@ const Collection = () => {
       </div>
 
       {/* Centered Div with warning message*/}
-      <div className="flex flex-col items-center justify-center text-center border border-red-600 border-dashed rounded-2xl p-2 mb-8">
-        <h2 className="font-bold mb-2">
-          Disclaimer
-        </h2>
-        <p className="mb-2">
+      <details className="border border-red-600 border-dashed rounded-2xl p-4 mb-8">
+        <summary className="font-bold cursor-pointer">Disclaimer</summary>
+        <p className="mt-2 text-sm">
           Digital fabric images may vary in color and texture from the actual material. 
-          We advise requesting a fabric sample prior to placing your order for accurate evaluation. 
+          Please request a sample for accurate evaluation.
         </p>
-      </div>
+      </details>
+        
 
       {matchedSubset ? (
         <div className="w-full">
@@ -175,12 +181,24 @@ const Collection = () => {
                     </h3>
                   </div>
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-3 sm:pt-4 gap-2">
-                    <p className="text-base sm:text-lg font-semibold line-clamp-2">
-                      Design Code
-                    </p>
+                    <p className="text-base sm:text-lg font-semibold line-clamp-2">Design Code</p>
                     <h3 className="text-base sm:text-lg text-blue-500 whitespace-nowrap">
                       {value.title}
                     </h3>
+                  </div>
+
+                  {/* 👉 Add this block below */}
+                  <div className="mt-4 flex justify-end">
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        setSelectedFabric({ ...value });
+                        setIsQuoteOpen(true);
+                      }}
+                      className="mt-4 text-sm"
+                    >
+                      Request Quote
+                    </Button>                 
                   </div>
                 </div>
               )
@@ -223,6 +241,71 @@ const Collection = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+
+    {/* Get fabric quote modal */}
+      <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
+          <DialogContent className="sm:max-w-md">
+            <DialogTitle>Request a Quote</DialogTitle>
+              <div className="space-y-4">
+                <p><strong>Design:</strong> {selectedFabric?.content}</p>
+                <p><strong>Design Code:</strong> {selectedFabric?.title}</p>
+
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={quoteName}
+                  onChange={(e) => setQuoteName(e.target.value)}
+                  className="w-full border rounded-md px-3 py-2 text-sm"
+                />
+
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  value={quoteEmail}
+                  onChange={(e) => setQuoteEmail(e.target.value)}
+                  className="w-full border rounded-md px-3 py-2 text-sm"
+                />
+
+                <input
+                  type="number"
+                  placeholder="Quantity (meters)"
+                  value={quoteQty}
+                  onChange={(e) => setQuoteQty(e.target.value)}
+                  className="w-full border rounded-md px-3 py-2 text-sm"
+                />
+
+                <textarea
+                  placeholder="Additional notes"
+                  value={quoteNote}
+                  onChange={(e) => setQuoteNote(e.target.value)}
+                  rows={3}
+                  className="w-full border rounded-md px-3 py-2 text-sm"
+                />
+
+                <Button
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  onClick={() => {
+                    if (!quoteName || !quoteEmail || !quoteQty) {
+                      toast.error("Please fill in all required fields.");
+                      return;
+                    }
+
+                    toast.success("Quote request sent successfully!");
+
+                    // Reset + Close
+                    setIsQuoteOpen(false);
+                    setQuoteName("");
+                    setQuoteEmail("");
+                    setQuoteQty("");
+                    setQuoteNote("");
+                    }}
+                  >
+                  Submit Request
+                </Button>
+              </div>
+          </DialogContent>
+        </Dialog>
 
       {/* Scroll-to-Top Button with Tailwind Animations */}
       <div
