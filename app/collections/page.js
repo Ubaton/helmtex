@@ -270,7 +270,7 @@ const Collection = () => {
 
     {/* Get fabric quote modal */}
       <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="w-full max-w-md sm:max-w-md px-4 sm:px-6 py-6 rounded-xl">
             <DialogTitle>Request a Quote</DialogTitle>
               <div className="space-y-4">
                 <p><strong>Design:</strong> {selectedFabric?.content}</p>
