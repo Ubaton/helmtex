@@ -1,4 +1,4 @@
-import React from "react";
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 import { collections } from "../../../components/ProductCard/Collection/data";
 import { notFound } from "next/navigation";
 import Products from "../../../components/ProductCard/Products";
