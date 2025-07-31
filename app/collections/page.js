@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import subset from "../../lib/subset";
-import { ArrowLeft, ChevronUp, X } from "lucide-react";
+import { ArrowLeft, ChevronUp, Search, X } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import {
   Dialog,
@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from "../../components/ui/dialog";
 import { toast } from "sonner";
+import { Input } from "../../components/ui/input";
 
 const Collection = () => {
   const [productDetails, setProductDetails] = useState({
@@ -32,6 +33,8 @@ const Collection = () => {
   const imageUrl = searchParams.get("imageUrl");
   const title = searchParams.get("title");
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+
 
   useEffect(() => {
     const title = searchParams.get("title");
@@ -141,16 +144,41 @@ const Collection = () => {
           Please request a sample for accurate evaluation.
         </p>
       </details>
-        
 
+      <div className="mb-6 flex justify-center">
+        <div className="relative w-full max-w-xl">
+          <Input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search fabric by name or code..."
+            className="w-full pl-10 border rounded-md px-4 py-2 text-sm shadow-sm focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+      </div>      
       {matchedSubset ? (
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 w-full">
-            {Object.entries(matchedSubset && Object.values(matchedSubset)[0] || {}).map(
-              ([key, value]) => (
+            {(() => {
+              const entries = Object.entries(
+                (matchedSubset && Object.values(matchedSubset)[0]) || {}
+              );
+              const filtered = entries.filter(([_, value]) =>
+                value?.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                value?.content?.toLowerCase().includes(searchTerm.toLowerCase())
+              );
+
+              if (filtered.length === 0) {
+                return (
+                  <div className="col-span-full text-center py-10 text-gray-500">
+                    No fabric found matching your search.
+                  </div>
+                );
+              }
+
+              return filtered.map(([key, value]) => (
                 <div key={key} className="p-3 sm:p-4 border rounded-xl w-full">
                   {value.image && (
-                    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
                     <div
                       className="relative w-full h-48 sm:h-56 md:h-64 cursor-pointer"
                       onClick={() =>
@@ -173,9 +201,7 @@ const Collection = () => {
                     </div>
                   )}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-3 sm:pt-4 gap-2">
-                    <p className="text-base sm:text-lg font-semibold line-clamp-2">
-                      Design
-                    </p>
+                    <p className="text-base sm:text-lg font-semibold line-clamp-2">Design</p>
                     <h3 className="text-base sm:text-lg text-blue-500 whitespace-nowrap">
                       {value.content}
                     </h3>
@@ -187,7 +213,6 @@ const Collection = () => {
                     </h3>
                   </div>
 
-                  {/* 👉 Add this block below */}
                   <div className="mt-4 flex justify-end">
                     <Button
                       variant="outline"
@@ -198,11 +223,11 @@ const Collection = () => {
                       className="mt-4 text-sm"
                     >
                       Request Quote
-                    </Button>                 
+                    </Button>
                   </div>
                 </div>
-              )
-            )}
+              ));
+            })()}
           </div>
         </div>
       ) : (
