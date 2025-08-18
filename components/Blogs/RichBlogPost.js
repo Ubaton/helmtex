@@ -13,16 +13,6 @@ export default function RichBlogPost({ post }) {
     <article className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Hero Section */}
       <header className="relative">
-        <nav className="absolute top-0 left-0 right-0 z-10 p-6">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-white hover:text-gray-200 transition-colors duration-200 bg-black/20 backdrop-blur-sm rounded-full px-4 py-2"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Blog
-          </Link>
-        </nav>
-
         <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
           <Image
             src={post.featuredImage || "/placeholder.svg"}
