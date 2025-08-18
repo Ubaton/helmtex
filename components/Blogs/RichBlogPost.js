@@ -4,19 +4,7 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  Share2,
-  Bookmark,
-  Heart,
-  MessageCircle,
-  Twitter,
-  Facebook,
-  Linkedin,
-  Copy,
-  Globe,
-  Globe2,
-  Github,
 } from "lucide-react"
-import { Button } from "../ui/button"
 import { FaGithub, FaGlobeAfrica } from "react-icons/fa";
 
 export default function RichBlogPost({ post }) {
@@ -124,6 +112,7 @@ export default function RichBlogPost({ post }) {
             prose-ul:my-4 prose-li:my-1 list-disc pl-6
             prose-a:text-blue-600 hover:prose-a:underline
             prose-strong:text-gray-900 dark:prose-strong:text-white"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
