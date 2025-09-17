@@ -37,7 +37,6 @@ const Nav = () => {
               quality={100}
               onClick={() => router.push("/")}
             />
-            <h1>Raymond Ngobeni</h1>
           </div>
           <Button
             onClick={toggleMenu}
