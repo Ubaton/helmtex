@@ -1,0 +1,78 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    # Uncomment the line below to make this job dependent on CI job success
+    # needs: [build-and-test]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        # Uncomment and configure environment variables when needed
+        # env:
+        #   NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+
+      # Deploy to Vercel (if you're using Vercel)
+      # Uncomment and configure the following section when ready to deploy
+      # - name: Deploy to Vercel
+      #   uses: amondnet/vercel-action@v20
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+      #     working-directory: ./
+      #     vercel-args: '--prod'
+
+      # Alternative deployment methods:
+      # Uncomment one of the following sections if you're not using Vercel
+
+      # # Deploy to Netlify
+      # - name: Deploy to Netlify
+      #   uses: nwtgck/actions-netlify@v2
+      #   with:
+      #     publish-dir: '.next'
+      #     production-branch: main
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     deploy-message: "Deploy from GitHub Actions"
+      #     enable-pull-request-comment: true
+      #     enable-commit-comment: true
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # # Deploy to custom server via SSH
+      # - name: Deploy to server
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd /path/to/your/project
+      #       git pull
+      #       npm ci
+      #       npm run build
+      #       # Add any additional deployment steps (like restarting PM2, etc.)
+
+      - name: Notify deployment status
+        # This step can be customized to notify via Slack, Discord, email, etc.
+        run: echo "Deployment completed successfully!"
